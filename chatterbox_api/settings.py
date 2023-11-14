@@ -17,7 +17,7 @@ if os.path.exists('env.py'):
     import env
 
 CLOUDINARY_STORAGE = {
-    'CLOUDINARY_URL' = os.environ.get('CLOUDINARY_URL')
+    'CLOUDINARY_URL': os.environ.get('CLOUDINARY_URL')
 }
 MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
@@ -35,7 +35,7 @@ SECRET_KEY = 'django-insecure-8t0fc^&sw4y)u@_a+3y-*bz2mkn!#2=&j+%mi89#og9uqnbo(b
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['8000-fintanmi-chatterbox-api-6r87cp0bbv.us2.codeanyapp.com']
 
 
 # Application definition
@@ -49,6 +49,8 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
+
+    'profiles',
 ]
 
 MIDDLEWARE = [
