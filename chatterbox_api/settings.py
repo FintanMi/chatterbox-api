@@ -51,7 +51,7 @@ JWT_AUTH_REFRESH_COOKIE = 'my-refresh-token'
 JWT_AUTH_SAMESITE = 'None'
 
 REST_AUTH_SERIALIZERS = {
-    'USER_DETAILS_SERIALIZERS': 'chatterbox_api.serializers.CurrentUserSerializer'
+    'USER_DETAILS_SERIALIZER': 'chatterbox_api.serializers.CurrentUserSerializer'
 }
 
 
@@ -64,7 +64,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEV' in os.environ
 
-ALLOWED_HOSTS = ['8000-fintanmi-chatterbox-api-6r87cp0bbv.us2.codeanyapp.com',
+ALLOWED_HOSTS = ['8000-fintanmi-chatterbox-api-djkg01t65v.us2.codeanyapp.com',
                  os.environ.get('ALLOWED_HOST')]
 
 
@@ -115,7 +115,7 @@ if 'CLIENT_ORIGIN' in os.environ:
     CORS_ALLOWED_ORIGINS = [
         os.environ.get('CLIENT_ORIGIN')
     ]
-    
+
 if 'CLIENT_ORIGIN_DEV' in os.environ:
     extracted_url = re.match(
         r'^([^.]+)', os.environ.get('CLIENT_ORIGIN_DEV', ''), re.IGNORECASE).group(0)

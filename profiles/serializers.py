@@ -19,7 +19,7 @@ class ProfileSerializer(serializers.ModelSerializer):
         user = self.context['request'].user
         if user.is_authenticated:
             following = Follower.objects.filter(
-                owner = user, followed = obj.owner
+                owner=user, followed=obj.owner
             ).first()
             return following.id if following else None
         return None
@@ -27,5 +27,5 @@ class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = Profile
         fields = ['id', 'owner', 'created_at', 'updated_at', 'name', 'content',
-            'image', 'is_owner', 'following_id', 'posts_count',
-            'followers_count', 'following_count',]
+                  'image', 'is_owner', 'following_id', 'posts_count',
+                  'followers_count', 'following_count',]
