@@ -9,9 +9,10 @@ class Community(models.Model):
     owner = models.OneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=150)
     description = models.TextField(null=True, blank=True)
-    users = models.ForeignKey(User, on_delete=models.CASCADE, related_name='users')
-    comment = models.ForeignKey(Comment, on_delete=models.CASCADE)
-    like = models.ForeignKey(Like, on_delete=models.CASCADE)
+    users = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='users', null=True)
+    comment = models.ForeignKey(Comment, on_delete=models.CASCADE, null=True)
+    like = models.ForeignKey(Like, on_delete=models.CASCADE, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
