@@ -63,7 +63,8 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEV' in os.environ
 
-ALLOWED_HOSTS = ['8000-fintanmi-chatterbox-api-6r87cp0bbv.us2.codeanyapp.com']
+ALLOWED_HOSTS = ['8000-fintanmi-chatterbox-api-6r87cp0bbv.us2.codeanyapp.com',
+    'https://chatterbox2023-9e1aa29de755.herokuapp.com']
 
 
 # Application definition
