@@ -12,6 +12,7 @@ def root_route(request):
         'message': 'You have arrived at my chatterbox API!'
     })
 
+
 @api_view(['POST'])
 def logout_route(request):
     response = Response()
