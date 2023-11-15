@@ -14,5 +14,5 @@ class CommunitySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Community
-        fields = ['id', 'owner', 'name', 'description', 'users', 'comment',
+        fields = ['id', 'owner', 'is_owner', 'name', 'description', 'users', 'comment',
             'like', 'created_at', 'updated_at', 'posts_count', 'profiles_count']
