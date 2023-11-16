@@ -6,18 +6,18 @@
 
 .App {
     font-family: 'Quicksand', 'Ubuntu', sans-serif;
-    background-color: #360033;
+    background-color: #0052D4;
     color: #e6e6ea;
     min-height: 100vh;
 }
 
 i {
-    color: #e6e6ea;
+    color: #fff;
     font-size: 1.1rem;
 }
 
 i:hover {
-    color: #c3b3c2;
+    color: #fff;
 }
 
 .MainContent {
@@ -25,9 +25,15 @@ i:hover {
 }
 
 .Content {
-    background-color: #ffffff;
+    background-color: #fff;
     padding: 0.5rem;
-    border-radius: 3rem;
-    border: 1px solid #10000f;
-    background-color: #360033;
+    border-radius: 0 3rem 0 3rem;
+    background-color: #0052D4;
+}
+
+.ContentLink {
+    background-color: #fff;
+    padding: 0.5rem;
+    border-radius: 2rem 0 2rem 0;
+    background-color: #0052D4;
 }

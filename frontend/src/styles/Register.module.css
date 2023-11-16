@@ -1,20 +1,20 @@
 .Row {
     height: calc(100vh - 5.8rem);
-    background-color: #5e335c;
+    background-color: #4364F7;
+    border-radius: 50px 50px 0 0;
 }
 
 .Input {
     background: #fff;
-    border: 1px solid #10000f;
     box-sizing: border-box;
-    border-radius: 2px;
+    border-radius: 4px;
     color: #7177a1;
     text-align: center;
     padding: 10px;
-}  
+}
 
 .Header {
-    font-size: 1rem;
+    font-size: 1.2rem;
     text-align: center;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -26,16 +26,20 @@
     text-align: center;
     display: block;
     margin: auto;
-    color: #c3b3c2;
+    color: #fff;
+}
+
+.Link:hover {
+    color: #000;
 }
 
 .Btn {
     border-radius: 75px;
-    background-color: #360033;
+    background-color: #0052D4;
     border: none;
     width: 100%;
 }
 
 .Btn:hover {
-    background-color: #5e335c;
+    background-color: #4364F7;
 }
