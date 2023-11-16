@@ -1,0 +1,30 @@
+.NavBar {
+    display: flex;
+    z-index: 2;
+    border-bottom: 1px solid #af99ad;
+}
+
+.Navlink {
+    font-size: 1rem;
+    color: #e6e6ea;
+    padding-right: 0.5rem;
+}
+
+.Navlink:hover {
+    color: #c3b3c2;
+}
+
+.Active {
+    color: #0a7a84;
+}
+
+.LogoText {
+    color: #e6e6ea;
+    margin-left: 0.5rem;
+}
+
+.Searchbar {
+    margin: 0 auto;
+    display: flex;
+    flex-grow: 2;
+}

@@ -1,0 +1,41 @@
+.Row {
+    height: calc(100vh - 5.8rem);
+    background-color: #5e335c;
+}
+
+.Input {
+    background: #fff;
+    border: 1px solid #10000f;
+    box-sizing: border-box;
+    border-radius: 2px;
+    color: #7177a1;
+    text-align: center;
+    padding: 10px;
+}  
+
+.Header {
+    font-size: 1rem;
+    text-align: center;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.Link {
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    margin: auto;
+    color: #c3b3c2;
+}
+
+.Btn {
+    border-radius: 75px;
+    background-color: #360033;
+    border: none;
+    width: 100%;
+}
+
+.Btn:hover {
+    background-color: #5e335c;
+}

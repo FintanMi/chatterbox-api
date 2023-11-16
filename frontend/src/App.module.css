@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.App {
+    font-family: 'Quicksand', 'Ubuntu', sans-serif;
+    background-color: #360033;
+    color: #e6e6ea;
+    min-height: 100vh;
+}
+
+i {
+    color: #e6e6ea;
+    font-size: 1.1rem;
+}
+
+i:hover {
+    color: #c3b3c2;
+}
+
+.MainContent {
+    padding-top: 5.8rem;
+}
+
+.Content {
+    background-color: #ffffff;
+    padding: 0.5rem;
+    border-radius: 3rem;
+    border: 1px solid #10000f;
+    background-color: #360033;
+}
