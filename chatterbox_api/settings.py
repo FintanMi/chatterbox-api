@@ -64,7 +64,9 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = ['8000-fintanmi-chatterbox-api-djkg01t65v.us2.codeanyapp.com',
-                 os.environ.get('ALLOWED_HOST')]
+                 os.environ.get('ALLOWED_HOST'), 'localhost']
+
+CSRF_TRUSTED_ORIGINS = ['https://yourworkspaceurl']
 
 
 # Application definition

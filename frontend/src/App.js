@@ -7,11 +7,13 @@ import Register from './pages/auth/Register';
 import Login from './pages/auth/Login';
 
 function App() {
+
     return (
         <div className={styles.App}>
             <NavBar />
             <Container className={styles.MainContent}>
                 <Switch>
+                    <Route exact path='/' render={() => <p>home</p>} />
                     <Route exact path='/login' render={() => <Login />} />
                     <Route exact path='/register' render={() => <Register />} />
                     <Route render={() => <p>Page not found</p>} />

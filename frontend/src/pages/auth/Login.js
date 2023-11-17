@@ -11,9 +11,12 @@ import { Link, useHistory } from "react-router-dom";
 import styles from "../../styles/Login.module.css";
 import appStyles from "../../App.module.css";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
+import { useRedirect } from "../../hooks/useRedirect";
+import { setTokenTimestamp } from "../../utils/utils";
 
 function Login() {
     const setCurrentUser = useSetCurrentUser();
+    useRedirect('loggedIn');
     const [registerData, setRegisterData] = useState({
         username: '',
         password: '',
@@ -27,7 +30,8 @@ function Login() {
         try {
             const { data } = await axios.post("/dj-rest-auth/login/", registerData);
             setCurrentUser(data.user);
-            history.push('/');
+            setTokenTimestamp(data);
+            history.goBack();
         } catch (err) {
             setErrors(err.response?.data);
         }
