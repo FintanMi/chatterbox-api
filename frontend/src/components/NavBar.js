@@ -9,6 +9,7 @@ import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContex
 import Avatar from './Avatar';
 import axios from 'axios';
 import useClickOutsideToggle from '../hooks/useClickOutsideToggle';
+import CommunityModal from '../modal/CommunityModal';
 
 const NavBar = () => {
     const currentUser = useCurrentUser();
@@ -87,7 +88,7 @@ const NavBar = () => {
                 className={styles.Navlink}
                 style={{ textDecoration: 'none' }}
             >
-                <i className="fas fa-plus-square"></i> Create Community
+                <i className="fas fa-plus-square"></i> <CommunityModal />
             </NavLink>
         </>
     );

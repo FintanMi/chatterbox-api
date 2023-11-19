@@ -63,7 +63,7 @@ function Post() {
     const textFields = (
         <div className="text-center">
             <Form.Group>
-                <Form.Label>Title</Form.Label>
+                <Form.Label className='d-none'>Title</Form.Label>
                 <Form.Control
                     type='text'
                     name='title'
@@ -78,7 +78,7 @@ function Post() {
             ))}
 
             <Form.Group>
-                <Form.Label>Content</Form.Label>
+                <Form.Label className='d-none'>Content</Form.Label>
                 <Form.Control
                     as='textarea'
                     rows={8}
@@ -97,12 +97,12 @@ function Post() {
                 className={styles.BtnPostCancel}
                 onClick={() => history.goBack()}
             >
-                cancel
+                Cancel
             </Button>
             <Button
                 className={styles.BtnPostCreate}
                 type="submit">
-                create
+                Create
             </Button>
         </div>
     );
