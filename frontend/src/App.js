@@ -7,6 +7,7 @@ import Register from './pages/auth/Register';
 import Login from './pages/auth/Login';
 import Post from './pages/posts/Post';
 import Community from './pages/Community';
+import PostPage from './pages/posts/PostPage';
 
 function App() {
 
@@ -19,7 +20,8 @@ function App() {
                     <Route exact path='/login' render={() => <Login />} />
                     <Route exact path='/register' render={() => <Register />} />
                     <Route exact path='/posts/create' render={() => <Post />} />
-                    <Route exact path='/community/create' render={() => <Community />} />
+                    <Route exact path='/posts/:id' render={() => <PostPage />} />
+                    <Route exact path='/community/:id' render={() => <Community />} />
                     <Route render={() => <p>Page not found</p>} />
                 </Switch>
             </Container>
