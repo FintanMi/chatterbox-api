@@ -8,8 +8,8 @@ import Upload from "../../assets/upload.png";
 import styles from "../../styles/Post.module.css";
 import appStyles from "../../App.module.css";
 import Asset from '../../components/Asset';
-import { Image } from 'react-bootstrap';
-import { useHistory } from 'react-router-dom';
+import Image from 'react-bootstrap/Image';
+import { useHistory } from 'react-router';
 import { axiosReq } from '../../api/axiosDefault';
 import Alert from "react-bootstrap/Alert";
 
@@ -28,6 +28,7 @@ function Post() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData();
+
         formData.append('title', title);
         formData.append('content', content);
         formData.append('image', imageRef.current.files[0]);

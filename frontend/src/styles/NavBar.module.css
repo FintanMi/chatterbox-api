@@ -1,6 +1,6 @@
 .NavBar {
     display: flex;
-    z-index: 2;
+    z-index: 6;
     border-bottom: 1px solid #af99ad;
 
 }

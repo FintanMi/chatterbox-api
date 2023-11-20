@@ -1,6 +1,6 @@
 import NavBar from './components/NavBar';
 import styles from './App.module.css';
-import { Container } from 'react-bootstrap';
+import Container from 'react-bootstrap/Container';
 import { Switch, Route } from 'react-router-dom';
 import './api/axiosDefault';
 import Register from './pages/auth/Register';
