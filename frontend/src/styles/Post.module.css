@@ -1,19 +1,32 @@
-.Container {
-    min-height: 20rem;
+.Post {
+    background-color: #4364F7;
+    border: none;
+    border-radius: 35px 0 35px 0;
+    margin-bottom: 16px;
+    text-align: center;
 }
 
-.BtnPostCancel {
-    border-radius: 15px 0 15px 15px;
-    background-color: #99baee;
-    color: #000815;
-    border: none;
-    width: 40%;
+.Post figure,
+h5 {
+    margin: 0 0;
+}
+
+.Heart {
+    color: #f85032;
+}
+
+.Heart:hover {
+    color: #00102a;
+}
+
+.HeartOutline:hover {
+    color: #f85032;
+}
+
+.CommentIcon {
+    margin-left: 0.8rem;
+}
+
+.UpdatedGap {
     margin-right: 1rem;
-}
-
-.BtnPostCreate {
-    border-radius: 0 15px 15px 15px;
-    background-color: #000815;
-    border: none;
-    width: 40%;
 }

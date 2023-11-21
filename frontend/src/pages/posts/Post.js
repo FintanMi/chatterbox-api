@@ -1,167 +1,132 @@
-import React, { useRef, useState } from "react";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Container from "react-bootstrap/Container";
-import Upload from "../../assets/upload.png";
-import styles from "../../styles/Post.module.css";
-import appStyles from "../../App.module.css";
-import Asset from '../../components/Asset';
-import Image from 'react-bootstrap/Image';
-import { useHistory } from 'react-router';
-import { axiosReq } from '../../api/axiosDefault';
-import Alert from "react-bootstrap/Alert";
+import React from 'react';
+import { OverlayTrigger, Tooltip } from 'react-bootstrap';
+import Card from 'react-bootstrap/Card';
+import Media from 'react-bootstrap/Media';
+import { Link, useHistory } from 'react-router-dom';
+import { axiosRes } from '../../api/axiosDefault';
+import Avatar from '../../components/Avatar';
+import { useCurrentUser } from '../../contexts/CurrentUserContext';
+import styles from '../../styles/Post.module.css';
+import { MoreDropdown } from '../../components/MoreDropdown';
 
-function Post() {
+const Post = (props) => {
+    const {
+        id,
+        owner,
+        profile_id,
+        profile_image,
+        comments_count,
+        likes_count,
+        like_id,
+        title,
+        content,
+        image,
+        updated_at,
+        postPage,
+        setPosts,
+    } = props;
 
-    const [errors, setErrors] = useState({});
-
-    const [postData, setPostData] = useState({
-        title: "",
-        content: "",
-        image: "",
-    });
-    const { title, content, image } = postData;
-
-    const imageRef = useRef(null);
+    const currentUser = useCurrentUser();
+    const is_owner = currentUser?.username === owner;
     const history = useHistory();
 
-    const handleChange = (e) => {
-        setPostData({
-            ...postData,
-            [e.target.name]: e.target.value,
-        });
+    const handleEdit = () => {
+        history.push(`/posts/${id}/edit`);
     };
 
-    const handleImage = (e) => {
-        if (e.target.files.length) {
-            URL.revokeObjectURL(image);
-            setPostData({
-                ...postData,
-                image: URL.createObjectURL(e.target.files[0]),
-            });
-        }
-    };
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        const formData = new FormData();
-
-        formData.append("title", title);
-        formData.append("content", content);
-        formData.append("image", imageRef.current.files[0]);
-
+    const handleDelete = async () => {
         try {
-            const { data } = await axiosReq.post("/posts/", formData);
-            history.push(`/posts/${data.id}`);
+            await axiosRes.delete(`/posts/${id}/`);
+            history.goBack();
         } catch (err) {
             console.log(err);
-            if (err.response?.status !== 401) {
-                setErrors(err.response?.data);
-            }
         }
     };
 
-    const textFields = (
-        <div className="text-center">
-            <Form.Group>
-                <Form.Label>Title</Form.Label>
-                <Form.Control
-                    type="text"
-                    name="title"
-                    value={title}
-                    onChange={handleChange}
-                />
-            </Form.Group>
-            {errors?.title?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                    {message}
-                </Alert>
-            ))}
+    const handleLike = async () => {
+        try {
+            const { data } = await axiosRes.post('/likes/', { post: id });
+            setPosts((prevPosts) => ({
+                ...prevPosts,
+                results: prevPosts.results.map((post) => {
+                    return post.id === id
+                        ? { ...post, likes_count: post.likes_count + 1, like_id: data.id }
+                        : post;
+                }),
+            }));
+        } catch (err) {
+            console.log(err);
+        }
+    };
 
-            <Form.Group>
-                <Form.Label>Content</Form.Label>
-                <Form.Control
-                    as="textarea"
-                    rows={8}
-                    name="content"
-                    value={content}
-                    onChange={handleChange}
-                />
-            </Form.Group>
-            {errors?.content?.map((message, idx) => (
-                <Alert variant="warning" key={idx}>
-                    {message}
-                </Alert>
-            ))}
-
-            <Button
-                className={styles.BtnPostCancel}
-                onClick={() => history.goBack()}
-            >
-                Cancel
-            </Button>
-            <Button
-                className={styles.BtnPostCreate}
-                type="submit">
-                Create
-            </Button>
-        </div>
-    );
+    const handleUnlike = async () => {
+        try {
+            await axiosRes.delete(`/likes/${like_id}`);
+            setPosts((prevPosts) => ({
+                ...prevPosts,
+                results: prevPosts.results.map((post) => {
+                    return post.id === id
+                        ? { ...post, likes_count: post.likes_count - 1, like_id: null }
+                        : post;
+                }),
+            }));
+        } catch (err) {
+            console.log(err);
+        }
+    };
 
     return (
-        <Form onSubmit={handleSubmit}>
-            <Row>
-                <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
-                    <Container
-                        className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
-                    >
-                        <Form.Group className="text-center">
-                            {image ? (
-                                <>
-                                    <figure>
-                                        <Image className={appStyles.Image} src={image} rounded />
-                                    </figure>
-                                    <div>
-                                        <Form.Label
-                                            className={styles.BtnPostCancel}
-                                            htmlFor='upload-image'
-                                        >
-                                            Change the Image
-                                        </Form.Label>
-                                    </div>
-                                </>
-                            ) : (
-                                <Form.Label
-                                    className="d-flex justify-content-center"
-                                    htmlFor="upload-image"
-                                >
-                                    <Asset src={Upload} message='Click to upload a photo' />
-                                </Form.Label>
-                            )}
-                            <Form.File
-                                id='upload-image'
-                                accept='image/*'
-                                onChange={handleImage}
-                                ref={imageRef}
+        <Card className={styles.Post}>
+            <Card.Body>
+                <Media className='align-items-center justify-content-between'>
+                    <Link to={`/profiles/${profile_id}`} style={{ textDecoration: 'none' }}>
+                        <Avatar src={profile_image} height={40} />
+                        {owner}
+                    </Link>
+                    <div className='d-flex align-items-center'>
+                        <span className={styles.UpdatedGap}>{updated_at}</span>
+                        {is_owner && postPage && (
+                            <MoreDropdown
+                                handleEdit={handleEdit}
+                                handleDelete={handleDelete}
                             />
-                        </Form.Group>
-                        {errors?.image?.map((message, idx) => (
-                            <Alert variant='warning' key={idx}>
-                                {message}
-                            </Alert>
-                        ))}
-
-                        <div className="d-md-none">{textFields}</div>
-                    </Container>
-                </Col>
-                <Col md={5} lg={4} className="d-none d-md-block p-0 p-md-2">
-                    <Container className={appStyles.Content}>{textFields}</Container>
-                </Col>
-            </Row>
-        </Form>
+                        )}
+                    </div>
+                </Media>
+            </Card.Body>
+            <Link to={`/posts/${id}`}>
+                <Card.Img src={image} alt={title} />
+            </Link>
+            <Card.Body>
+                {title && <Card.Title className='text-center'>{title}</Card.Title>}
+                {content && <Card.Text>{content}</Card.Text>}
+                <div className={styles.PostBar}>
+                    {is_owner ? (
+                        <OverlayTrigger placement='top' overlay={<Tooltip>You can't like your own photo!</Tooltip>}>
+                            <i className='far fa-heart' />
+                        </OverlayTrigger>
+                    ) : like_id ? (
+                        <span onClick={handleUnlike}>
+                            <i className={`fas fa-heart ${styles.Heart}`} />
+                        </span>
+                    ) : currentUser ? (
+                        <span onClick={handleLike}>
+                            <i className={`far fa-heart ${styles.HeartOutline}`} />
+                        </span>
+                    ) : (
+                        <OverlayTrigger placement='top' overlay={<Tooltip>Login to like a post</Tooltip>}>
+                            <i className='far fa-heart' />
+                        </OverlayTrigger>
+                    )}
+                    {likes_count}
+                    <Link to={`/posts/${id}`}>
+                        <i className={`far fa-comments ${styles.CommentIcon}`} />
+                    </Link>
+                    {comments_count}
+                </div>
+            </Card.Body>
+        </Card>
     );
-}
+};
 
 export default Post;

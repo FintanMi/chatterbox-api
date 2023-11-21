@@ -8,7 +8,7 @@ import { useLocation } from 'react-router';
 import appStyles from "../../App.module.css";
 import styles from "../../styles/Home.module.css";
 import { axiosReq } from '../../api/axiosDefault';
-import PostContent from '../posts/PostContent';
+import Post from '../posts/Post';
 import Asset from '../../components/Asset';
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from '../../utils/utils';
@@ -63,7 +63,7 @@ function Home({ message, filter = '' }) {
                             <InfiniteScroll
                                 children={
                                     content.results.map((contents) => (
-                                        <PostContent key={contents.id} {...contents} setPosts={setContent} />
+                                        <Post key={contents.id} {...contents} setPosts={setContent} />
                                     ))
                                 }
                                 dataLength={content.results.length}

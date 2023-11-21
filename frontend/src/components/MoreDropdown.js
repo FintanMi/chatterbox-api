@@ -1,10 +1,10 @@
-import React from 'react';
-import { Dropdown } from 'react-bootstrap';
-import styles from '../styles/MoreDropdown.module.css';
+import React from "react";
+import Dropdown from "react-bootstrap/Dropdown";
+import styles from "../styles/MoreDropdown.module.css";
 
-const Dots = React.forwardRef(({ onClick }, ref) => (
+const ThreeDots = React.forwardRef(({ onClick }, ref) => (
     <i
-        className='fas fa-ellipsis-v'
+        className="fas fa-ellipsis-v"
         ref={ref}
         onClick={(e) => {
             e.preventDefault();
@@ -13,10 +13,10 @@ const Dots = React.forwardRef(({ onClick }, ref) => (
     />
 ));
 
-export const MoreDropdown = () => {
+export const MoreDropdown = ({ handleEdit, handleDelete }) => {
     return (
-        <Dropdown className='ml-auto' drop='left'>
-            <Dropdown.Toggle as={Dots} />
+        <Dropdown className="ml-auto" drop="left">
+            <Dropdown.Toggle as={ThreeDots} />
 
             <Dropdown.Menu
                 className="text-center"
@@ -24,21 +24,19 @@ export const MoreDropdown = () => {
             >
                 <Dropdown.Item
                     className={styles.DropdownItem}
-                    onClick={() => { }}
-                    aria-label='edit'
+                    onClick={handleEdit}
+                    aria-label="edit"
                 >
-                    <i className='fas fa-edit' /> Edit
+                    <i className="fas fa-edit" />
                 </Dropdown.Item>
                 <Dropdown.Item
-                    className={styles.DropdownItem}
-                    onClick={() => { }}
-                    aria-label='delete'
+                    className={styles.DropdownItemDelete}
+                    onClick={handleDelete}
+                    aria-label="delete"
                 >
-                    <i className='fas fa-trash-alt' /> Delete
+                    <i className="fas fa-trash-alt" />
                 </Dropdown.Item>
             </Dropdown.Menu>
         </Dropdown>
     );
 };
-
-export default MoreDropdown;

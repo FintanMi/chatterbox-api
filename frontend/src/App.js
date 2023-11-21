@@ -5,11 +5,12 @@ import { Switch, Route } from 'react-router-dom';
 import './api/axiosDefault';
 import Register from './pages/auth/Register';
 import Login from './pages/auth/Login';
-import Post from './pages/posts/Post';
+import PostCreateForm from './pages/posts/PostCreateForm';
 import Community from './pages/community/Community';
 import PostPage from './pages/posts/PostPage';
 import HomePage from './pages/home/Home';
 import { useCurrentUser } from './contexts/CurrentUserContext';
+import PostEditForm from './pages/posts/PostEditForm';
 
 function App() {
     const currentUser = useCurrentUser();
@@ -43,9 +44,10 @@ function App() {
                                 filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`} />
                         )}
                     />
+                    <Route exact path='/posts/:id/edit' render={() => <PostEditForm />} />
                     <Route exact path='/login' render={() => <Login />} />
                     <Route exact path='/register' render={() => <Register />} />
-                    <Route exact path='/posts/create' render={() => <Post />} />
+                    <Route exact path='/posts/create' render={() => <PostCreateForm />} />
                     <Route exact path='/posts/:id' render={() => <PostPage />} />
                     <Route exact path='/community/:id' render={() => <Community />} />
                     <Route render={() => <p>Page not found</p>} />

@@ -5,8 +5,8 @@ import Col from 'react-bootstrap/Col';
 import styles from '../../styles/PostPage.module.css';
 import { useParams } from 'react-router';
 import { axiosReq } from '../../api/axiosDefault';
-import PostContent from './PostContent';
-import { useCurrentUser, useSetCurrentUser } from '../../contexts/CurrentUserContext';
+import Post from './Post';
+import { useCurrentUser } from '../../contexts/CurrentUserContext';
 
 function PostPage() {
     const { id } = useParams();
@@ -14,7 +14,6 @@ function PostPage() {
 
     const currentUser = useCurrentUser();
     console.log('CURRENT USER: ', currentUser);
-    const setCurrentUser = useSetCurrentUser();
 
     useEffect(() => {
         const handleMount = async () => {
@@ -28,6 +27,7 @@ function PostPage() {
                 console.log(err);
             }
         };
+
         handleMount();
     }, [id]);
 
@@ -38,10 +38,8 @@ function PostPage() {
             </Col>
             <Col className='py-2 p-0 p-lg-2' lg={6}>
                 <p>Popular profiles for mobile</p>
-                <PostContent {...post.results[0]} setPosts={setPost} postPage />
-                <Container className={styles.Content}>
-                    Comments
-                </Container>
+                <Post {...post.results[0]} setPosts={setPost} postPage />
+                <Container className={styles.Content}>Comments</Container>
             </Col>
             <Col lg={3} className='d-none d-lg-block p-0 p-lg-2'>
                 <p>Popular profiles for desktop</p> <br />
