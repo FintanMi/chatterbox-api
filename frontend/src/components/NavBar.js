@@ -13,6 +13,7 @@ import CommunityModal from '../modal/CommunityModal';
 
 const NavBar = () => {
     const currentUser = useCurrentUser();
+    console.log('CURRENT USER: ', currentUser);
     const setCurrentUser = useSetCurrentUser();
 
     const { burgerExpand, setBurgerExpand, ref } = useClickOutsideToggle();

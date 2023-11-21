@@ -6,10 +6,15 @@ import styles from '../../styles/PostPage.module.css';
 import { useParams } from 'react-router';
 import { axiosReq } from '../../api/axiosDefault';
 import PostContent from './PostContent';
+import { useCurrentUser, useSetCurrentUser } from '../../contexts/CurrentUserContext';
 
 function PostPage() {
     const { id } = useParams();
     const [post, setPost] = useState({ results: [] });
+
+    const currentUser = useCurrentUser();
+    console.log('CURRENT USER: ', currentUser);
+    const setCurrentUser = useSetCurrentUser();
 
     useEffect(() => {
         const handleMount = async () => {
