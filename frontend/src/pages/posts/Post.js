@@ -16,33 +16,16 @@ import Alert from "react-bootstrap/Alert";
 function Post() {
 
     const [errors, setErrors] = useState({});
+
     const [postData, setPostData] = useState({
-        title: 'title',
-        content: 'content',
-        image: '',
+        title: "",
+        content: "",
+        image: "",
     });
     const { title, content, image } = postData;
+
     const imageRef = useRef(null);
     const history = useHistory();
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        const formData = new FormData();
-
-        formData.append('title', title);
-        formData.append('content', content);
-        formData.append('image', imageRef.current.files[0]);
-
-        try {
-            const { data } = await axiosReq.post('/posts/', formData);
-            history.push(`/posts/${data.id}`);
-        } catch (err) {
-            console.log(err);
-            if (err.response?.status !== 401) {
-                setErrors(err.response?.data);
-            }
-        }
-    };
 
     const handleChange = (e) => {
         setPostData({
@@ -61,35 +44,54 @@ function Post() {
         }
     };
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const formData = new FormData();
+
+        formData.append("title", title);
+        formData.append("content", content);
+        formData.append("image", imageRef.current.files[0]);
+
+        try {
+            const { data } = await axiosReq.post("/posts/", formData);
+            history.push(`/posts/${data.id}`);
+        } catch (err) {
+            console.log(err);
+            if (err.response?.status !== 401) {
+                setErrors(err.response?.data);
+            }
+        }
+    };
+
     const textFields = (
         <div className="text-center">
             <Form.Group>
-                <Form.Label className='d-none'>Title</Form.Label>
+                <Form.Label>Title</Form.Label>
                 <Form.Control
-                    type='text'
-                    name='title'
+                    type="text"
+                    name="title"
                     value={title}
                     onChange={handleChange}
                 />
             </Form.Group>
-            {errors.title?.map((message, idx) => (
-                <Alert variant='warning' key={idx}>
+            {errors?.title?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
                     {message}
                 </Alert>
             ))}
 
             <Form.Group>
-                <Form.Label className='d-none'>Content</Form.Label>
+                <Form.Label>Content</Form.Label>
                 <Form.Control
-                    as='textarea'
+                    as="textarea"
                     rows={8}
-                    name='content'
+                    name="content"
                     value={content}
                     onChange={handleChange}
                 />
             </Form.Group>
-            {errors.content?.map((message, idx) => (
-                <Alert variant='warning' key={idx}>
+            {errors?.content?.map((message, idx) => (
+                <Alert variant="warning" key={idx}>
                     {message}
                 </Alert>
             ))}
@@ -124,7 +126,8 @@ function Post() {
                                     <div>
                                         <Form.Label
                                             className={styles.BtnPostCancel}
-                                            htmlFor='upload-image'>
+                                            htmlFor='upload-image'
+                                        >
                                             Change the Image
                                         </Form.Label>
                                     </div>

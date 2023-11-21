@@ -6,7 +6,7 @@ import './api/axiosDefault';
 import Register from './pages/auth/Register';
 import Login from './pages/auth/Login';
 import Post from './pages/posts/Post';
-import Community from './pages/Community';
+import Community from './pages/community/Community';
 import PostPage from './pages/posts/PostPage';
 
 function App() {

@@ -28,16 +28,18 @@ function PostPage() {
 
     return (
         < Row className='h-100' >
-            <Col className='py-2 p-0 p-lg-2' lg={8}>
+            <Col lg={3} className='d-none d-lg-block p-0 p-lg-2'>
+                <p>Popular communities</p>
+            </Col>
+            <Col className='py-2 p-0 p-lg-2' lg={6}>
                 <p>Popular profiles for mobile</p>
                 <PostContent {...post.results[0]} setPosts={setPost} postPage />
                 <Container className={styles.Content}>
                     Comments
                 </Container>
             </Col>
-            <Col lg={4} className='d-none d-lg-block p-0 p-lg-2'>
+            <Col lg={3} className='d-none d-lg-block p-0 p-lg-2'>
                 <p>Popular profiles for desktop</p> <br />
-                <p>Popular communities</p>
             </Col>
         </Row >
     );

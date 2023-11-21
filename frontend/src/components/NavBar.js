@@ -96,14 +96,12 @@ const NavBar = () => {
     return (
         <Navbar expanded={burgerExpand} className={styles.NavBar} expand="md" fixed='top'>
             <Container>
-                <Nav>
-                    <NavLink to='/' style={{ textDecoration: 'none' }}>
-                        <Navbar.Brand>
-                            <img src={logo} alt='logo' height='48' />
-                            <span className={styles.LogoText}>chatterbox</span>
-                        </Navbar.Brand>
-                    </NavLink>
-                </Nav>
+                <NavLink to='/' style={{ textDecoration: 'none' }}>
+                    <Navbar.Brand>
+                        <img src={logo} alt='logo' height='48' />
+                        <span className={styles.LogoText}>chatterbox</span>
+                    </Navbar.Brand>
+                </NavLink>
                 {currentUser && createIcon}
                 <Navbar.Toggle
                     ref={ref}
