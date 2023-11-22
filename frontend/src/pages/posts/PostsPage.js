@@ -11,6 +11,7 @@ import { useLocation } from "react-router";
 import { axiosReq } from '../../api/axiosDefault';
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
+import PopularProfiles from '../profiles/PopularProfiles';
 
 function PostsPage({ message, filter = "" }) {
     const [posts, setPosts] = useState({ results: [] });
@@ -42,8 +43,11 @@ function PostsPage({ message, filter = "" }) {
 
     return (
         <Row className="h-100">
-            <Col className="py-2 p-0 p-lg-2" lg={8}>
-                <p>Popular profiles mobile</p>
+            <Col md={3} className="d-none d-lg-block p-0 p-lg-2">
+                <p>popular communities</p>
+            </Col>
+            <Col className="py-2 p-0 p-lg-2" lg={6}>
+                <PopularProfiles mobile />
                 <i className={`fas fa-search ${styles.SearchIcon}`} />
                 <Form
                     className={styles.SearchBar}
@@ -82,8 +86,8 @@ function PostsPage({ message, filter = "" }) {
                     </Container>
                 )}
             </Col>
-            <Col md={4} className="d-none d-lg-block p-0 p-lg-2">
-                <p>Popular profiles for desktop</p>
+            <Col md={3} className="d-none d-lg-block p-0 p-lg-2">
+                <PopularProfiles />
             </Col>
         </Row>
     );
