@@ -1,13 +1,14 @@
-import React from 'react';
-import { OverlayTrigger, Tooltip } from 'react-bootstrap';
-import Card from 'react-bootstrap/Card';
-import Media from 'react-bootstrap/Media';
-import { Link, useHistory } from 'react-router-dom';
+import React from "react";
+import Card from "react-bootstrap/Card";
+import Media from "react-bootstrap/Media";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
+import { Link, useHistory } from "react-router-dom";
+import styles from "../../styles/Post.module.css";
+import { useCurrentUser } from "../../contexts/CurrentUserContext";
+import Avatar from "../../components/Avatar";
 import { axiosRes } from '../../api/axiosDefault';
-import Avatar from '../../components/Avatar';
-import { useCurrentUser } from '../../contexts/CurrentUserContext';
-import styles from '../../styles/Post.module.css';
-import { MoreDropdown } from '../../components/MoreDropdown';
+import { MoreDropdown } from "../../components/MoreDropdown";
 
 const Post = (props) => {
     const {
@@ -39,58 +40,49 @@ const Post = (props) => {
             await axiosRes.delete(`/posts/${id}/`);
             history.goBack();
         } catch (err) {
-            console.log(err);
+
         }
     };
 
     const handleLike = async () => {
         try {
-            const { data } = await axiosRes.post('/likes/', { post: id });
+            const { data } = await axiosRes.post("likes/", { post: id });
             setPosts((prevPosts) => ({
                 ...prevPosts,
-                results: prevPosts.results.map((post) => {
-                    return post.id === id
-                        ? { ...post, likes_count: post.likes_count + 1, like_id: data.id }
-                        : post;
-                }),
+                results: prevPosts.results.map((post) => (post.id === id
+                    ? { ...post, likes_count: post.likes_count + 1, like_id: data.id }
+                    : post)),
             }));
         } catch (err) {
-            console.log(err);
+
         }
     };
 
     const handleUnlike = async () => {
         try {
-            await axiosRes.delete(`/likes/${like_id}`);
+            await axiosRes.delete(`/likes/${like_id}/`);
             setPosts((prevPosts) => ({
                 ...prevPosts,
-                results: prevPosts.results.map((post) => {
-                    return post.id === id
-                        ? { ...post, likes_count: post.likes_count - 1, like_id: null }
-                        : post;
-                }),
+                results: prevPosts.results.map((post) => (post.id === id
+                    ? { ...post, likes_count: post.likes_count - 1, like_id: null }
+                    : post)),
             }));
         } catch (err) {
-            console.log(err);
+
         }
     };
 
     return (
         <Card className={styles.Post}>
             <Card.Body>
-                <Media className='align-items-center justify-content-between'>
-                    <Link to={`/profiles/${profile_id}`} style={{ textDecoration: 'none' }}>
-                        <Avatar src={profile_image} height={40} />
+                <Media className="align-items-center justify-content-between">
+                    <Link to={`/profiles/${profile_id}`} className={styles.Link}>
+                        <Avatar src={profile_image} height={55} />
                         {owner}
                     </Link>
-                    <div className='d-flex align-items-center'>
+                    <div className="d-flex align-items-center">
                         <span className={styles.UpdatedGap}>{updated_at}</span>
-                        {is_owner && postPage && (
-                            <MoreDropdown
-                                handleEdit={handleEdit}
-                                handleDelete={handleDelete}
-                            />
-                        )}
+                        {is_owner && postPage && <MoreDropdown handleEdit={handleEdit} handleDelete={handleDelete} />}
                     </div>
                 </Media>
             </Card.Body>
@@ -98,12 +90,15 @@ const Post = (props) => {
                 <Card.Img src={image} alt={title} />
             </Link>
             <Card.Body>
-                {title && <Card.Title className='text-center'>{title}</Card.Title>}
+                {title && <Card.Title className="text-center">{title}</Card.Title>}
                 {content && <Card.Text>{content}</Card.Text>}
                 <div className={styles.PostBar}>
                     {is_owner ? (
-                        <OverlayTrigger placement='top' overlay={<Tooltip>You can't like your own photo!</Tooltip>}>
-                            <i className='far fa-heart' />
+                        <OverlayTrigger
+                            placement="top"
+                            overlay={<Tooltip>You cannot like your own post!</Tooltip>}
+                        >
+                            <i className="far fa-heart" />
                         </OverlayTrigger>
                     ) : like_id ? (
                         <span onClick={handleUnlike}>
@@ -114,13 +109,16 @@ const Post = (props) => {
                             <i className={`far fa-heart ${styles.HeartOutline}`} />
                         </span>
                     ) : (
-                        <OverlayTrigger placement='top' overlay={<Tooltip>Login to like a post</Tooltip>}>
-                            <i className='far fa-heart' />
+                        <OverlayTrigger
+                            placement="top"
+                            overlay={<Tooltip>Log in to like posts</Tooltip>}
+                        >
+                            <i className="far fa-heart" />
                         </OverlayTrigger>
                     )}
                     {likes_count}
-                    <Link to={`/posts/${id}`}>
-                        <i className={`far fa-comments ${styles.CommentIcon}`} />
+                    <Link to={`/posts/${id}`} className={styles.CommentIcon}>
+                        <i className="far fa-comments" />
                     </Link>
                     {comments_count}
                 </div>

@@ -6,7 +6,6 @@ import './api/axiosDefault';
 import Register from './pages/auth/Register';
 import Login from './pages/auth/Login';
 import PostCreateForm from './pages/posts/PostCreateForm';
-import Community from './pages/community/Community';
 import PostPage from './pages/posts/PostPage';
 import PostsPage from './pages/posts/PostsPage';
 import { useCurrentUser } from './contexts/CurrentUserContext';
@@ -47,7 +46,6 @@ function App() {
                     <Route exact path='/posts/create' render={() => <PostCreateForm />} />
                     <Route exact path='/posts/:id/edit' render={() => <PostEditForm />} />
                     <Route exact path='/posts/:id' render={() => <PostPage />} />
-                    <Route exact path='/community/:id' render={() => <Community />} />
                     <Route render={() => <p>Page not found</p>} />
                 </Switch>
             </Container>
