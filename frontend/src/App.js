@@ -8,7 +8,7 @@ import Login from './pages/auth/Login';
 import PostCreateForm from './pages/posts/PostCreateForm';
 import Community from './pages/community/Community';
 import PostPage from './pages/posts/PostPage';
-import HomePage from './pages/home/Home';
+import PostsPage from './pages/posts/PostsPage';
 import { useCurrentUser } from './contexts/CurrentUserContext';
 import PostEditForm from './pages/posts/PostEditForm';
 
@@ -21,33 +21,31 @@ function App() {
             <NavBar />
             <Container className={styles.MainContent}>
                 <Switch>
-                    <Route
-                        exact
-                        path='/'
-                        render={() => (
-                            <HomePage message='No results found, try again.' />
-                        )}
-                    />
+                    <Route exact path='/' render={() => <PostsPage message='No results found, try again.' />} />
                     <Route
                         exact
                         path='/feed'
                         render={() => (
-                            <HomePage message='No results found, follow a user or adjust your search.'
-                                filter={`owner__followed__owner__profile=${profile_id}&`} />
+                            <PostsPage
+                                message='No results found, follow a user.'
+                                filter={`owner__followed__owner__profile=${profile_id}&`}
+                            />
                         )}
                     />
                     <Route
                         exact
                         path='/liked'
                         render={() => (
-                            <HomePage message='No results found, like a post or adjust your search.'
-                                filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`} />
+                            <PostsPage
+                                message='No results found, like a post.'
+                                filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`}
+                            />
                         )}
                     />
-                    <Route exact path='/posts/:id/edit' render={() => <PostEditForm />} />
                     <Route exact path='/login' render={() => <Login />} />
                     <Route exact path='/register' render={() => <Register />} />
                     <Route exact path='/posts/create' render={() => <PostCreateForm />} />
+                    <Route exact path='/posts/:id/edit' render={() => <PostEditForm />} />
                     <Route exact path='/posts/:id' render={() => <PostPage />} />
                     <Route exact path='/community/:id' render={() => <Community />} />
                     <Route render={() => <p>Page not found</p>} />

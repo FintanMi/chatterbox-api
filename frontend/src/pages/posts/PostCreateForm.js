@@ -1,20 +1,24 @@
 import React, { useRef, useState } from "react";
+
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
+import Alert from "react-bootstrap/Alert";
+import Image from "react-bootstrap/Image";
+
+import Asset from "../../components/Asset";
+
 import Upload from "../../assets/upload.png";
+
 import styles from "../../styles/PostCreateForm.module.css";
 import appStyles from "../../App.module.css";
-import Asset from '../../components/Asset';
-import Image from 'react-bootstrap/Image';
-import { useHistory } from 'react-router';
+
+import { useHistory } from "react-router";
 import { axiosReq } from '../../api/axiosDefault';
-import Alert from "react-bootstrap/Alert";
 
 function PostCreateForm() {
-
     const [errors, setErrors] = useState({});
 
     const [postData, setPostData] = useState({
@@ -24,33 +28,33 @@ function PostCreateForm() {
     });
     const { title, content, image } = postData;
 
-    const imageRef = useRef(null);
+    const imageInput = useRef(null);
     const history = useHistory();
 
-    const handleChange = (e) => {
+    const handleChange = (event) => {
         setPostData({
             ...postData,
-            [e.target.name]: e.target.value,
+            [event.target.name]: event.target.value,
         });
     };
 
-    const handleImage = (e) => {
-        if (e.target.files.length) {
+    const handleChangeImage = (event) => {
+        if (event.target.files.length) {
             URL.revokeObjectURL(image);
             setPostData({
                 ...postData,
-                image: URL.createObjectURL(e.target.files[0]),
+                image: URL.createObjectURL(event.target.files[0]),
             });
         }
     };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+    const handleSubmit = async (event) => {
+        event.preventDefault();
         const formData = new FormData();
 
         formData.append("title", title);
         formData.append("content", content);
-        formData.append("image", imageRef.current.files[0]);
+        formData.append("image", imageInput.current.files[0]);
 
         try {
             const { data } = await axiosReq.post("/posts/", formData);
@@ -84,7 +88,7 @@ function PostCreateForm() {
                 <Form.Label>Content</Form.Label>
                 <Form.Control
                     as="textarea"
-                    rows={8}
+                    rows={6}
                     name="content"
                     value={content}
                     onChange={handleChange}
@@ -97,14 +101,11 @@ function PostCreateForm() {
             ))}
 
             <Button
-                className={styles.BtnPostCancel}
                 onClick={() => history.goBack()}
             >
                 Cancel
             </Button>
-            <Button
-                className={styles.BtnPostCreate}
-                type="submit">
+            <Button type="submit">
                 Create
             </Button>
         </div>
@@ -125,30 +126,33 @@ function PostCreateForm() {
                                     </figure>
                                     <div>
                                         <Form.Label
-                                            className={styles.BtnPostCancel}
-                                            htmlFor='upload-image'
+                                            htmlFor="image-upload"
                                         >
-                                            Change the Image
+                                            Change the image
                                         </Form.Label>
                                     </div>
                                 </>
                             ) : (
                                 <Form.Label
                                     className="d-flex justify-content-center"
-                                    htmlFor="upload-image"
+                                    htmlFor="image-upload"
                                 >
-                                    <Asset src={Upload} message='Click to upload a photo' />
+                                    <Asset
+                                        src={Upload}
+                                        message="Click to upload an image"
+                                    />
                                 </Form.Label>
                             )}
+
                             <Form.File
-                                id='upload-image'
-                                accept='image/*'
-                                onChange={handleImage}
-                                ref={imageRef}
+                                id="image-upload"
+                                accept="image/*"
+                                onChange={handleChangeImage}
+                                ref={imageInput}
                             />
                         </Form.Group>
                         {errors?.image?.map((message, idx) => (
-                            <Alert variant='warning' key={idx}>
+                            <Alert variant="warning" key={idx}>
                                 {message}
                             </Alert>
                         ))}
