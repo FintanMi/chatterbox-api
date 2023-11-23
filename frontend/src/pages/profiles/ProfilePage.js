@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-
+import { ProfileEditDropdown } from "../../components/MoreDropdown";
 import Asset from "../../components/Asset";
 import Button from "react-bootstrap/Button";
 import styles from "../../styles/ProfilePage.module.css";
@@ -50,6 +50,7 @@ function ProfilePage() {
 
     const mainProfile = (
         <>
+            {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
             <Row noGutters className="px-3 text-center">
                 <Col lg={3} className="text-lg-left">
                     <Image

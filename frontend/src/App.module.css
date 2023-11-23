@@ -6,7 +6,7 @@
 
 .App {
     font-family: 'Quicksand', 'Ubuntu', sans-serif;
-    background-color: #0052D4;
+    background-color: rgba(0, 82, 212, 0.65);
     color: #e6e6ea;
     min-height: 100vh;
 }

@@ -5,8 +5,10 @@ import styles from "../../styles/Register.module.css";
 import appStyles from "../../App.module.css";
 import Alert from 'react-bootstrap/Alert';
 import { Form, Button, Col, Row, Container } from "react-bootstrap";
+import { useRedirect } from '../../hooks/useRedirect';
 
 const Register = () => {
+    useRedirect('loggedIn');
     const [registerData, setRegisterData] = useState({
         username: '',
         password1: '',

@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
@@ -7,18 +6,16 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
 import Image from "react-bootstrap/Image";
-
 import Asset from "../../components/Asset";
-
 import Upload from "../../assets/upload.png";
-
 import styles from "../../styles/PostCreateForm.module.css";
 import appStyles from "../../App.module.css";
-
 import { useHistory } from "react-router";
 import { axiosReq } from '../../api/axiosDefault';
+import { useRedirect } from '../../hooks/useRedirect';
 
 function PostCreateForm() {
+    useRedirect('loggedOut');
     const [errors, setErrors] = useState({});
 
     const [postData, setPostData] = useState({

@@ -1,9 +1,17 @@
 .Post {
-    background-color: #4364F7;
+    background-color: #0052d4;
     border: none;
     border-radius: 35px 0 35px 0;
     margin-bottom: 16px;
     text-align: center;
+}
+
+a {
+    color: #fff;
+}
+
+a:hover {
+    color: #e6eefb;
 }
 
 .Post figure,
