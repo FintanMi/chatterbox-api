@@ -5,6 +5,11 @@
     margin: 0.4rem;
 }
 
+.Dots {
+    margin-top: 1.25rem;
+    margin-left: 2rem;
+}
+
 @media screen and (max-width: 991px) {
     .ProfileImage {
         height: 15rem;

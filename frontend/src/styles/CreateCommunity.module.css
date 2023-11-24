@@ -1,0 +1,38 @@
+.BtnCancel {
+    margin-right: 1rem;
+    color: #0052D4;
+    background-color: #fff;
+    border: 1px solid #0052D4;
+    border-radius: 35px;
+}
+
+.BtnCancel:hover {
+    color: #0052D4;
+    background-color: #fff;
+}
+
+.BtnCreate {
+    background-color: #00102a;
+    color: #fff;
+    border: 1px solid #00102a;
+    border-radius: 35px;
+}
+
+.BtnCreate:hover {
+    background-color: #00102a;
+    color: #fff;
+}
+
+.Checkbox {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.Public {
+    margin-right: 1rem;
+}
+
+.NameLimit {
+    font-size: 0.75rem;
+}

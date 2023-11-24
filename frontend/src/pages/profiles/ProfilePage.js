@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
@@ -50,7 +49,7 @@ function ProfilePage() {
 
     const mainProfile = (
         <>
-            {profile?.is_owner && <ProfileEditDropdown id={profile?.id} />}
+            {profile?.is_owner}
             <Row noGutters className="px-3 text-center">
                 <Col lg={3} className="text-lg-left">
                     <Image
@@ -74,6 +73,10 @@ function ProfilePage() {
                             <div>{profile?.following_count}</div>
                             <div>following</div>
                         </Col>
+                        <Col xs={1} className={styles.Dots}>
+                            <ProfileEditDropdown id={profile?.id} />
+                        </Col>
+
                     </Row>
                 </Col>
                 <Col lg={3} className="text-lg-right">
