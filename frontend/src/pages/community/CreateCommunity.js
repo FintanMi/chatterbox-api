@@ -49,7 +49,7 @@ function CreateCommunity() {
         }
     };
 
-    const textFields = (
+    const communityFields = (
         <div className="text-center">
             <div>
                 <Form.Group>
@@ -89,15 +89,16 @@ function CreateCommunity() {
                 </Alert>
             ))}
 
-
-
             <Button
                 onClick={() => history.goBack()}
                 className={styles.BtnCancel}
             >
                 Cancel
             </Button>
-            <Button className={styles.BtnCreate}>
+            <Button
+                type="submit"
+                className={styles.BtnCreate}
+            >
                 Create
             </Button>
         </div >
@@ -110,7 +111,7 @@ function CreateCommunity() {
                 <Col md={5} lg={4} className="d-none d-md-block p-0 p-md-2">
                     <Container className={appStyles.Content}>
                         <div>
-                            {textFields}
+                            {communityFields}
                         </div>
                     </Container>
                 </Col>

@@ -7,8 +7,8 @@ from django.db.models import Count
 
 class CommunityList(generics.ListAPIView):
     queryset = Community.objects.annotate(
-        profiles_count = Count('owner__profile', distinct=True),
-        posts_count = Count('owner__post', distinct=True)
+        profiles_count=Count('owner__profile', distinct=True),
+        posts_count=Count('owner__post', distinct=True)
     ).order_by('-created_at')
     serializer_class = CommunitySerializer
     filter_backends = [
