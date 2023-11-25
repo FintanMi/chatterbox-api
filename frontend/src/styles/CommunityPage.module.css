@@ -1,0 +1,24 @@
+.Content {
+    padding: 0.5rem;
+    border-radius: 3rem 0 3rem 0;
+    background-color: #0052D4;
+    position: sticky;
+    top: 102px;
+}
+
+.CommunityLink {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+    text-align: left;
+    line-height: 2rem;
+}
+
+.CommunityLinkIcon {
+    margin-right: 0.75rem;
+    padding-bottom: 0.1rem;
+}
+
+.HR {
+    border: 1px solid #ccdcf6;
+}

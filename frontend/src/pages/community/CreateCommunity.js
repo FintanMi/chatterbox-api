@@ -38,6 +38,11 @@ function CreateCommunity() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        const formData = new FormData(e.target);
+
+        formData.append("name", name);
+        formData.append("description", description);
+
         try {
             const { data } = await axiosReq.post("/community/", community);
             history.push(`/community/${data.id}`);

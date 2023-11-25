@@ -52,6 +52,7 @@ function PostPage() {
                             post={id}
                             setPost={setPost}
                             setComments={setComments}
+                            className={appStyles.CommentSection}
                         />
                     ) : comments.results.length ? (
                         "Comments"
@@ -71,9 +72,9 @@ function PostPage() {
                             next={() => fetchMoreData(comments, setComments)}
                         />
                     ) : currentUser ? (
-                        <span>No comments yet, be the first!</span>
+                        <span className={appStyles.CommentInfo}>No comments yet, be the first!</span>
                     ) : (
-                        <span>Still waiting on someone to comment!</span>
+                        <span className={appStyles.CommentInfo}>Still waiting on someone to comment!</span>
                     )}
                 </Container>
             </Col>

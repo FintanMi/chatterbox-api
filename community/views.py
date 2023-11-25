@@ -5,7 +5,7 @@ from chatterbox_api.permissions import IsOwnerOrReadOnly
 from django.db.models import Count
 
 
-class CommunityList(generics.ListAPIView):
+class CommunityList(generics.ListCreateAPIView):
     queryset = Community.objects.annotate(
         profiles_count=Count('owner__profile', distinct=True),
         posts_count=Count('owner__post', distinct=True)

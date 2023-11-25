@@ -37,7 +37,7 @@ const Post = (props) => {
 
     const handleDelete = async () => {
         try {
-            await axiosRes.delete(`/posts/${id}/`);
+            await axiosRes.delete(`/posts/${id}`);
             history.goBack();
         } catch (err) {
 
@@ -60,15 +60,17 @@ const Post = (props) => {
 
     const handleUnlike = async () => {
         try {
-            await axiosRes.delete(`/likes/${like_id}/`);
+            await axiosRes.delete(`/likes/${like_id}`);
             setPosts((prevPosts) => ({
                 ...prevPosts,
-                results: prevPosts.results.map((post) => (post.id === id
-                    ? { ...post, likes_count: post.likes_count - 1, like_id: null }
-                    : post)),
+                results: prevPosts.results.map((post) => {
+                    return post.id === id
+                        ? { ...post, likes_count: post.likes_count - 1, like_id: null }
+                        : post;
+                }),
             }));
         } catch (err) {
-
+            console.log(err);
         }
     };
 

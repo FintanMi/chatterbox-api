@@ -99,10 +99,11 @@ function PostCreateForm() {
 
             <Button
                 onClick={() => history.goBack()}
+                className={styles.BtnPostCancel}
             >
                 Cancel
             </Button>
-            <Button type="submit">
+            <Button type="submit" className={styles.BtnPostCreate}>
                 Create
             </Button>
         </div>
@@ -146,6 +147,7 @@ function PostCreateForm() {
                                 accept="image/*"
                                 onChange={handleChangeImage}
                                 ref={imageInput}
+                                className={styles.FileInput}
                             />
                         </Form.Group>
                         {errors?.image?.map((message, idx) => (

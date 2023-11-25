@@ -4,9 +4,9 @@
 
 .BtnPostCancel {
     border-radius: 15px 0 15px 15px;
-    background-color: #99baee;
-    color: #000815;
-    border: none;
+    color: #0052D4;
+    background-color: #fff;
+    border: 1px solid #0052D4;
     width: 40%;
     margin-right: 1rem;
 }
@@ -16,4 +16,8 @@
     background-color: #000815;
     border: none;
     width: 40%;
+}
+
+.FileInput {
+    display: none;
 }

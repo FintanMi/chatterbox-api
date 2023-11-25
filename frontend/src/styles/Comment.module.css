@@ -8,3 +8,11 @@
     font-weight: lighter;
     color: #ccdcf6;
 }
+
+.Heart {
+    color: #f85032;
+}
+
+.Heart:hover {
+    color: #00102a;
+}
