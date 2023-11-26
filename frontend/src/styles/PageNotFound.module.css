@@ -1,0 +1,26 @@
+.PageNotFound {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.PageNotFoundContainer {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.BtnContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.GoBackBtn {
+    margin-right: 1rem;
+    color: #0052D4;
+    background-color: #fff;
+    border: 1px solid #0052D4;
+    border-radius: 35px;
+}

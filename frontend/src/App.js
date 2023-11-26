@@ -15,6 +15,9 @@ import UsernameForm from "./pages/profiles/UsernameForm";
 import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 import CreateCommunity from './pages/community/CreateCommunity';
+import CommunityPage from './pages/community/CommunityPage';
+import Gaming from './pages/community/Gaming';
+import PageNotFound from './components/PageNotFound';
 
 function App() {
     const currentUser = useCurrentUser();
@@ -53,6 +56,8 @@ function App() {
                     <Route exact path='/posts/:id' render={() => <PostPage />} />
                     <Route exact path='/profiles/:id' render={() => <ProfilePage />} />
                     <Route exact path='/community/create' render={() => <CreateCommunity />} />
+                    <Route exact path='/community/:id' render={() => <CommunityPage />} />
+                    <Route exact path='/community/:id/gaming' render={() => <Gaming />} />
                     <Route
                         exact
                         path="/profiles/:id/edit/username"
@@ -68,7 +73,7 @@ function App() {
                         path="/profiles/:id/edit"
                         render={() => <ProfileEditForm />}
                     />
-                    <Route render={() => <p>Page not found</p>} />
+                    <Route render={() => <PageNotFound />} />
                 </Switch>
             </Container>
         </div>

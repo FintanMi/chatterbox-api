@@ -9,12 +9,13 @@ import tv from '../../assets/tv.png';
 import nature from '../../assets/mountain.png';
 
 const CommunityPage = () => {
+
     return (
         <Container className={`${styles.Content} text-center`}>
-            <h5 className='mb-3'>Topics</h5>
+            <h6 className='mb-3'>Community Topics</h6>
             <hr className={styles.HR} />
             <div className={styles.CommunityLink}>
-                <Link style={{ textDecoration: 'none' }} to='/gaming'>
+                <Link style={{ textDecoration: 'none' }} to='community/gaming'>
                     <img
                         src={gaming}
                         alt='icon'
