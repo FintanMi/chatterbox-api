@@ -84,13 +84,6 @@ const NavBar = () => {
             >
                 <i className="fas fa-plus-square"></i> Create Post
             </NavLink>
-            <NavLink
-                to='/community/create'
-                className={styles.Navlink}
-                style={{ textDecoration: 'none' }}
-            >
-                <i className="fas fa-plus-square"></i> Create Community
-            </NavLink>
         </>
     );
 

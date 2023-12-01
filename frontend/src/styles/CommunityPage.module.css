@@ -22,3 +22,8 @@
 .HR {
     border: 1px solid #ccdcf6;
 }
+
+.FeatureList {
+    list-style: none;
+    margin: 1rem 0;
+}

@@ -3,6 +3,8 @@
     align-content: center;
     justify-content: center;
     flex-direction: column;
+    margin-top: 10rem;
+    
 }
 
 .PageNotFoundContainer {
@@ -23,4 +25,5 @@
     background-color: #fff;
     border: 1px solid #0052D4;
     border-radius: 35px;
+    margin-top: 1.2rem;
 }

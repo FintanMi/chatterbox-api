@@ -7,19 +7,19 @@ const PageNotFound = () => {
     const history = useHistory();
 
     return (
-            <div className={`${styles.PageNotFound} lg={8} justify-content-center`}>
-                <div>
-                    <h1>This isn't the page you're looking for</h1> <br />
-                </div>
-                <div className={styles.BtnContainer}>
-                    <Button
-                        onClick={() => history.goBack()}
-                        className={styles.GoBackBtn}
-                    >
-                        Go Back
-                    </Button>
-                </div>
+        <div className={`${styles.PageNotFound} lg={8} justify-content-center`}>
+            <div className={styles.PageNotFoundContainer}>
+                <h1>This isn't the page you're looking for</h1> <br />
             </div>
+            <div className={styles.BtnContainer}>
+                <Button
+                    onClick={() => history.goBack()}
+                    className={styles.GoBackBtn}
+                >
+                    Go Back
+                </Button>
+            </div>
+        </div>
     );
 };
 

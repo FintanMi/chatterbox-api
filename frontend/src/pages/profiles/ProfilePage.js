@@ -16,6 +16,7 @@ import { useProfileData, useSetProfileData } from '../../contexts/ProfileDataCon
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Post from '../posts/Post';
 import { fetchMoreData } from '../../utils/utils';
+import ProfileImageSlider from './ProfileImageSlider';
 
 function ProfilePage() {
     const [hasLoaded, setHasLoaded] = useState(false);
@@ -99,7 +100,7 @@ function ProfilePage() {
     const mainProfilePosts = (
         <>
             <hr />
-            <p className="text-center">{profile?.owner}'s posts</p>
+            <ProfileImageSlider />
             <hr />
             {profilePosts.results.length ? (
                 <InfiniteScroll
