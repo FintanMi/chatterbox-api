@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
-
+import { motion } from 'framer-motion/dist/framer-motion';
 import styles from "../../styles/CommentForm.module.css";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from '../../api/axiosDefault';
@@ -58,13 +58,15 @@ function CommentCreateForm(props) {
                     />
                 </InputGroup>
             </Form.Group>
-            <button
+            <motion.button
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: 'spring', stiffness: 700 }}
                 className={`${styles.Button} btn d-block ml-auto`}
                 disabled={!content.trim()}
                 type="submit"
             >
                 post
-            </button>
+            </motion.button>
         </Form>
     );
 }

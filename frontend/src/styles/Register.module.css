@@ -29,13 +29,15 @@
     color: #fff;
 }
 
-.Link:hover {
+.LoginBtn:hover {
     color: #000;
 }
 
 .Btn {
     border-radius: 75px;
     background-color: #0052D4;
+    color: #fff;
+    padding: 0.25rem 0;
     border: none;
     width: 100%;
 }

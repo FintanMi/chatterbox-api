@@ -1,0 +1,48 @@
+.CarouselContainer {
+    color: #fff;
+}
+
+.CarouselContainerBtn {
+    display: flex;
+    justify-content: space-between;
+}
+
+.CarouselContainerOuter {
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+}
+
+.CarouselContainerInner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #003994;
+    height: 15rem;
+    width: 15rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.CarouselContainerContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #4d86e1;
+    height: 12rem;
+    width: 12rem;
+    position: absolute;
+}
+
+.Right {
+    fill: #003994;
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+.BtnLeft {
+    height: 2.5rem;
+    width: 2.5rem;
+    color: #fff;
+    border: none;
+}

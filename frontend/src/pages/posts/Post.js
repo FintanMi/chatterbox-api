@@ -75,61 +75,120 @@ const Post = (props) => {
     };
 
     return (
-        <Card className={styles.Post}>
-            <Card.Body>
-                <Media className="align-items-center justify-content-between">
-                    <Link
-                        to={`/profiles/${profile_id}`}
-                        className={styles.Link}
-                        style={{ textDecoration: 'none' }}
-                    >
-                        <Avatar src={profile_image} height={55} />
-                        {owner}
-                    </Link>
-                    <div className="d-flex align-items-center">
-                        <span className={styles.UpdatedGap}>{updated_at}</span>
-                        {is_owner && postPage && <MoreDropdown handleEdit={handleEdit} handleDelete={handleDelete} />}
+        <>
+            <div className={styles.PostNew}>
+                <Link to={`/posts/${id}`}>
+                    <Card.Img src={image} alt={title} />
+                </Link>
+                <Card.Body>
+                    {title && <Card.Title className="text-center">{title}</Card.Title>}
+                    {content && <Card.Text>{content}</Card.Text>}
+                    <div className={styles.PostBar}>
+                        {is_owner ? (
+                            <OverlayTrigger
+                                placement="top"
+                                overlay={<Tooltip>You cannot like your own post!</Tooltip>}
+                            >
+                                <i className="far fa-heart" />
+                            </OverlayTrigger>
+                        ) : like_id ? (
+                            <span onClick={handleUnlike}>
+                                <i className={`fas fa-heart ${styles.Heart}`} />
+                            </span>
+                        ) : currentUser ? (
+                            <span onClick={handleLike}>
+                                <i className={`far fa-heart ${styles.HeartOutline}`} />
+                            </span>
+                        ) : (
+                            <OverlayTrigger
+                                placement="top"
+                                overlay={<Tooltip>Log in to like posts</Tooltip>}
+                            >
+                                <i className="far fa-heart" />
+                            </OverlayTrigger>
+                        )}
+                        {likes_count}
+                        <Link to={`/posts/${id}`} className={styles.CommentIcon}>
+                            <i className="far fa-comments" />
+                        </Link>
+                        {comments_count}
                     </div>
-                </Media>
-            </Card.Body>
-            <Link to={`/posts/${id}`}>
-                <Card.Img src={image} alt={title} />
-            </Link>
-            <Card.Body>
-                {title && <Card.Title className="text-center">{title}</Card.Title>}
-                {content && <Card.Text>{content}</Card.Text>}
-                <div className={styles.PostBar}>
-                    {is_owner ? (
-                        <OverlayTrigger
-                            placement="top"
-                            overlay={<Tooltip>You cannot like your own post!</Tooltip>}
+                </Card.Body>
+                <Card.Body>
+                    <Media className={`align-items-center justify-content-between ${styles.ContainerRight}`}>
+                        <Link
+                            to={`/profiles/${profile_id}`}
+                            className={styles.Link}
+                            style={{ textDecoration: 'none' }}
                         >
-                            <i className="far fa-heart" />
-                        </OverlayTrigger>
-                    ) : like_id ? (
-                        <span onClick={handleUnlike}>
-                            <i className={`fas fa-heart ${styles.Heart}`} />
-                        </span>
-                    ) : currentUser ? (
-                        <span onClick={handleLike}>
-                            <i className={`far fa-heart ${styles.HeartOutline}`} />
-                        </span>
-                    ) : (
-                        <OverlayTrigger
-                            placement="top"
-                            overlay={<Tooltip>Log in to like posts</Tooltip>}
+                            <Avatar src={profile_image} height={55} />
+                            {owner}
+                        </Link>
+                        <div className="d-flex align-items-center">
+                            <span className={styles.UpdatedGap}>{updated_at}</span>
+                            {is_owner && postPage && <MoreDropdown handleEdit={handleEdit} handleDelete={handleDelete} />}
+                        </div>
+                    </Media>
+                </Card.Body>
+            </div>
+
+
+            {/* <Card className={styles.Post}>
+                <Card.Body>
+                    <Media className="align-items-center justify-content-between">
+                        <Link
+                            to={`/profiles/${profile_id}`}
+                            className={styles.Link}
+                            style={{ textDecoration: 'none' }}
                         >
-                            <i className="far fa-heart" />
-                        </OverlayTrigger>
-                    )}
-                    {likes_count}
-                    <Link to={`/posts/${id}`} className={styles.CommentIcon}>
-                        <i className="far fa-comments" />
-                    </Link>
-                    {comments_count}
-                </div>
-            </Card.Body>
-        </Card>
+                            <Avatar src={profile_image} height={55} />
+                            {owner}
+                        </Link>
+                        <div className="d-flex align-items-center">
+                            <span className={styles.UpdatedGap}>{updated_at}</span>
+                            {is_owner && postPage && <MoreDropdown handleEdit={handleEdit} handleDelete={handleDelete} />}
+                        </div>
+                    </Media>
+                </Card.Body>
+                <Link to={`/posts/${id}`}>
+                    <Card.Img src={image} alt={title} />
+                </Link>
+                <Card.Body>
+                    {title && <Card.Title className="text-center">{title}</Card.Title>}
+                    {content && <Card.Text>{content}</Card.Text>}
+                    <div className={styles.PostBar}>
+                        {is_owner ? (
+                            <OverlayTrigger
+                                placement="top"
+                                overlay={<Tooltip>You cannot like your own post!</Tooltip>}
+                            >
+                                <i className="far fa-heart" />
+                            </OverlayTrigger>
+                        ) : like_id ? (
+                            <span onClick={handleUnlike}>
+                                <i className={`fas fa-heart ${styles.Heart}`} />
+                            </span>
+                        ) : currentUser ? (
+                            <span onClick={handleLike}>
+                                <i className={`far fa-heart ${styles.HeartOutline}`} />
+                            </span>
+                        ) : (
+                            <OverlayTrigger
+                                placement="top"
+                                overlay={<Tooltip>Log in to like posts</Tooltip>}
+                            >
+                                <i className="far fa-heart" />
+                            </OverlayTrigger>
+                        )}
+                        {likes_count}
+                        <Link to={`/posts/${id}`} className={styles.CommentIcon}>
+                            <i className="far fa-comments" />
+                        </Link>
+                        {comments_count}
+                    </div>
+                </Card.Body>
+            </Card> */}
+        </>
     );
 };
 

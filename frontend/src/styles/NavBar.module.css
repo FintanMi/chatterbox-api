@@ -11,10 +11,22 @@
     padding-right: 0.5rem;
     display: flex;
     align-items: center;
+    position: relative;
+}
+
+.Navlink:active {
+    color: #777;
 }
 
 .Navlink:hover {
     color: #c3b3c2;
+}
+
+.Tab {
+    position: absolute;
+    color: #003994;
+    inset: 0;
+    width: 100%;
 }
 
 .LogoText {

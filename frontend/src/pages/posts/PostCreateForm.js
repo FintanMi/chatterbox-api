@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react";
 import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
@@ -13,6 +12,7 @@ import appStyles from "../../App.module.css";
 import { useHistory } from "react-router";
 import { axiosReq } from '../../api/axiosDefault';
 import { useRedirect } from '../../hooks/useRedirect';
+import { motion } from 'framer-motion/dist/framer-motion';
 
 function PostCreateForm() {
     useRedirect('loggedOut');
@@ -97,15 +97,21 @@ function PostCreateForm() {
                 </Alert>
             ))}
 
-            <Button
+            <motion.button
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: 'spring', stiffness: 700 }}
                 onClick={() => history.goBack()}
                 className={styles.BtnPostCancel}
             >
                 Cancel
-            </Button>
-            <Button type="submit" className={styles.BtnPostCreate}>
+            </motion.button>
+            <motion.button
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: 'spring', stiffness: 700 }}
+                type="submit"
+                className={styles.BtnPostCreate}>
                 Create
-            </Button>
+            </motion.button>
         </div>
     );
 

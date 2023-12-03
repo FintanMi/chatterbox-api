@@ -16,3 +16,19 @@
         width: 15rem;
     }
 }
+
+.FollowBtn {
+    border: none;
+    padding: 0.25rem 0.4rem;
+    color: #002155;
+    background-color: #e6eefb;
+    border-radius: 2rem;
+}
+
+.UnfollowBtn {
+    border: none;
+    padding: 0.25rem 0.65rem;
+    background-color: #00317f;
+    color: #e6eefb;
+    border-radius: 2rem;
+}

@@ -17,6 +17,7 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import Post from '../posts/Post';
 import { fetchMoreData } from '../../utils/utils';
 import ProfileImageSlider from './ProfileImageSlider';
+import { motion } from 'framer-motion/dist/framer-motion';
 
 function ProfilePage() {
     const [hasLoaded, setHasLoaded] = useState(false);
@@ -84,11 +85,23 @@ function ProfilePage() {
                     {currentUser &&
                         !is_owner &&
                         (profile?.following_id ? (
-                            <Button onClick={() => handleUnfollow(profile)}>
+                            <motion.button
+                                whileHover={{ scale: 1.05, backgroundColor: '#DC281E' }}
+                                transition={{ type: 'spring', stiffness: 700 }}
+                                onClick={() => handleUnfollow(profile)}
+                                className={styles.UnfollowBtn}
+                            >
                                 Unfollow
-                            </Button>
+                            </motion.button>
                         ) : (
-                            <Button onClick={() => handleFollow(profile)}>Follow</Button>
+                            <motion.button
+                                whileHover={{ scale: 1.05 }}
+                                transition={{ type: 'spring', stiffness: 700 }}
+                                onClick={() => handleFollow(profile)}
+                                className={styles.FollowBtn}
+                            >
+                                Follow
+                            </motion.button>
                         ))
                     }
                 </Col>

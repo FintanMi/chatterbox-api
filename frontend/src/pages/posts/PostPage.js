@@ -13,6 +13,7 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import { fetchMoreData } from '../../utils/utils';
 import Asset from '../../components/Asset';
 import PopularProfiles from "../profiles/PopularProfiles";
+import Carousel from '../../components/Carousel';
 
 function PostPage() {
     const { id } = useParams();
@@ -41,10 +42,10 @@ function PostPage() {
 
     return (
         <Row className="h-100">
-            <Col className="py-2 p-0 p-lg-2" lg={8}>
+            <Col className="py-2 p-0 p-lg-2" lg={10}>
                 <PopularProfiles mobile />
                 <Post {...post.results[0]} setPosts={setPost} postPage />
-                <Container className={appStyles.Content}>
+                <Container className={appStyles.CommentContainer}>
                     {currentUser ? (
                         <CommentCreateForm
                             profile_id={currentUser.profile_id}
@@ -78,9 +79,13 @@ function PostPage() {
                     )}
                 </Container>
             </Col>
-            <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
+            {/* <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
                 <PopularProfiles />
-            </Col>
+                <Container>
+                    <Carousel />
+                </Container>
+
+            </Col> */}
         </Row>
     );
 }

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import Form from "react-bootstrap/Form";
 import { axiosRes } from '../../api/axiosDefault';
-
+import { motion } from 'framer-motion/dist/framer-motion';
 import styles from "../../styles/CommentForm.module.css";
 
 function CommentEditForm(props) {
@@ -50,20 +50,24 @@ function CommentEditForm(props) {
                 />
             </Form.Group>
             <div className="text-right">
-                <button
+                <motion.button
+                    whileHover={{ y: -5 }}
+                    transition={{ type: 'tween', stiffness: 700 }}
                     className={styles.Button}
                     onClick={() => setShowEditForm(false)}
                     type="button"
                 >
                     Cancel
-                </button>
-                <button
+                </motion.button>
+                <motion.button
+                    whileHover={{ y: -5 }}
+                    transition={{ type: 'tween', stiffness: 700 }}
                     className={styles.Button}
                     disabled={!content.trim()}
                     type="submit"
                 >
                     Save
-                </button>
+                </motion.button>
             </div>
         </Form>
     );

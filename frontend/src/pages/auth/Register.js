@@ -4,8 +4,9 @@ import axios from 'axios';
 import styles from "../../styles/Register.module.css";
 import appStyles from "../../App.module.css";
 import Alert from 'react-bootstrap/Alert';
-import { Form, Button, Col, Row, Container } from "react-bootstrap";
+import { Form, Col, Row, Container } from "react-bootstrap";
 import { useRedirect } from '../../hooks/useRedirect';
+import { motion } from 'framer-motion/dist/framer-motion';
 
 const Register = () => {
     useRedirect('loggedIn');
@@ -93,9 +94,14 @@ const Register = () => {
                             </Alert>
                         ))}
 
-                        <Button className={styles.Btn} type="submit">
+                        <motion.button
+                            whileHover={{ scale: 1.05 }}
+                            transition={{ type: 'spring', stiffness: 700 }}
+                            className={styles.Btn}
+                            type="submit"
+                        >
                             Submit
-                        </Button>
+                        </motion.button>
                         {errors.non_field_errors?.map((message, idx) => (
                             <Alert key={idx} variant='warning'>
                                 {message}
@@ -106,7 +112,7 @@ const Register = () => {
                 </Container>
                 <Container className={`mt-3 ${appStyles.ContentLink}`}>
                     <Link className={styles.Link} style={{ textDecoration: 'none' }} to="/login">
-                        Already have an account? <span>Sign in</span>
+                        Already have an account? <span className={styles.LoginBtn}>Sign in</span>
                     </Link>
                 </Container>
             </Col>
