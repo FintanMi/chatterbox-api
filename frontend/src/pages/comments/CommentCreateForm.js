@@ -11,13 +11,15 @@ import { axiosRes } from '../../api/axiosDefault';
 function CommentCreateForm(props) {
     const { post, setPost, setComments, profileImage, profile_id } = props;
     const [content, setContent] = useState("");
-
-    const handleChange = (event) => {
-        setContent(event.target.value);
+    const [chars, setChars] = useState(150);
+    const handleChange = (e) => {
+        if (e.target.value.length > 150) return;
+        setContent(e.target.value);
+        setChars(150 - e.target.value.length);
     };
 
-    const handleSubmit = async (event) => {
-        event.preventDefault();
+    const handleSubmit = async (e) => {
+        e.preventDefault();
         try {
             const { data } = await axiosRes.post("/comments/", {
                 content,
@@ -42,32 +44,35 @@ function CommentCreateForm(props) {
     };
 
     return (
-        <Form className="mt-2" onSubmit={handleSubmit}>
-            <Form.Group>
-                <InputGroup>
-                    <Link to={`/profiles/${profile_id}`}>
-                        <Avatar src={profileImage} />
-                    </Link>
-                    <Form.Control
-                        className={styles.Form}
-                        placeholder="my comment..."
-                        as="textarea"
-                        value={content}
-                        onChange={handleChange}
-                        rows={2}
-                    />
-                </InputGroup>
-            </Form.Group>
-            <motion.button
-                whileHover={{ scale: 1.1 }}
-                transition={{ type: 'spring', stiffness: 700 }}
-                className={`${styles.Button} btn d-block ml-auto`}
-                disabled={!content.trim()}
-                type="submit"
-            >
-                post
-            </motion.button>
-        </Form>
+        <motion.div initial={{ width: 0 }} animate={{ width: '100%' }} exit={{ x: window.innerWidth, transition: { duration: 0.1 } }}>
+            <Form className="mt-2" onSubmit={handleSubmit}>
+                <Form.Group>
+                    <InputGroup>
+                        <Link to={`/profiles/${profile_id}`}>
+                            <Avatar src={profileImage} />
+                        </Link>
+                        <Form.Control
+                            className={styles.Form}
+                            placeholder="my comment..."
+                            as="textarea"
+                            value={content}
+                            onChange={handleChange}
+                            rows={2}
+                        />
+                    </InputGroup>
+                    <span className={styles.Chars}>{chars} characters remaining</span>
+                </Form.Group>
+                <motion.button
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ type: 'spring', stiffness: 700 }}
+                    className={`${styles.Button} btn d-block ml-auto`}
+                    disabled={!content.trim()}
+                    type="submit"
+                >
+                    post
+                </motion.button>
+            </Form>
+        </motion.div>
     );
 }
 

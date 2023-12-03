@@ -28,25 +28,25 @@ function PostCreateForm() {
     const imageInput = useRef(null);
     const history = useHistory();
 
-    const handleChange = (event) => {
+    const handleChange = (e) => {
         setPostData({
             ...postData,
-            [event.target.name]: event.target.value,
+            [e.target.name]: e.target.value,
         });
     };
 
-    const handleChangeImage = (event) => {
-        if (event.target.files.length) {
+    const handleChangeImage = (e) => {
+        if (e.target.files.length) {
             URL.revokeObjectURL(image);
             setPostData({
                 ...postData,
-                image: URL.createObjectURL(event.target.files[0]),
+                image: URL.createObjectURL(e.target.files[0]),
             });
         }
     };
 
-    const handleSubmit = async (event) => {
-        event.preventDefault();
+    const handleSubmit = async (e) => {
+        e.preventDefault();
         const formData = new FormData();
 
         formData.append("title", title);

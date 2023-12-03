@@ -15,7 +15,10 @@ const Profile = (props) => {
     const { handleFollow, handleUnfollow } = useSetProfileData();
 
     return (
-        <div className={`my-3 d-flex align-items-center ${mobile && "flex-column"}`}>
+        <motion.div
+            className={`my-3 d-flex align-items-center ${mobile && "flex-column"}`}
+            initial={{ width: 0 }} animate={{ width: '100%' }} exit={{ x: window.innerWidth, transition: { duration: 0.1 } }}
+        >
             <div>
                 <Link className='align-self-center' to={`/profiles/${id}`}>
                     <Avatar src={image} height={imageSize} />
@@ -51,7 +54,7 @@ const Profile = (props) => {
                     )
                     )}
             </div>
-        </div>
+        </motion.div>
     );
 };
 

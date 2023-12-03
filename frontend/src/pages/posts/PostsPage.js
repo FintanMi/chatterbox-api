@@ -12,6 +12,7 @@ import { axiosReq } from '../../api/axiosDefault';
 import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from '../profiles/PopularProfiles';
+import { motion } from 'framer-motion/dist/framer-motion';
 
 function PostsPage({ message, filter = "" }) {
     const [posts, setPosts] = useState({ results: [] });
@@ -43,54 +44,56 @@ function PostsPage({ message, filter = "" }) {
 
     return (
         <>
-            <Row className="h-100">
-                {/* <Col md={3} className="d-none d-lg-block p-0 p-lg-2">
+            <motion.div initial={{ width: 0 }} animate={{ width: '100%' }} exit={{ y: window.innerWidth, transition: { duration: 0.1 } }}>
+                <Row className="h-100">
+                    {/* <Col md={3} className="d-none d-lg-block p-0 p-lg-2">
                 <p>something goes here</p>
             </Col> */}
-                <Col className="py-2 p-0 p-lg-2" lg={9}>
-                    <PopularProfiles mobile />
-                    <i className={`fas fa-search ${styles.SearchIcon}`} />
-                    <Form
-                        className={styles.SearchBar}
-                        onSubmit={(event) => event.preventDefault()}
-                    >
-                        <Form.Control
-                            value={query}
-                            onChange={(event) => setQuery(event.target.value)}
-                            type="text"
-                            className="mr-sm-2"
-                            placeholder="Search"
-                        />
-                    </Form>
+                    <Col className="py-2 p-0 p-lg-2" lg={9}>
+                        <PopularProfiles mobile />
+                        <i className={`fas fa-search ${styles.SearchIcon}`} />
+                        <Form
+                            className={styles.SearchBar}
+                            onSubmit={(event) => event.preventDefault()}
+                        >
+                            <Form.Control
+                                value={query}
+                                onChange={(event) => setQuery(event.target.value)}
+                                type="text"
+                                className="mr-sm-2"
+                                placeholder="Search"
+                            />
+                        </Form>
 
-                    {hasLoaded ? (
-                        <>
-                            {posts.results.length ? (
-                                <InfiniteScroll
-                                    children={posts.results.map((post) => (
-                                        <Post key={post.id} {...post} setPosts={setPosts} />
-                                    ))}
-                                    dataLength={posts.results.length}
-                                    loader={<Asset spinner />}
-                                    hasMore={!!posts.next}
-                                    next={() => fetchMoreData(posts, setPosts)}
-                                />
-                            ) : (
-                                <Container className={appStyles.Content}>
-                                    <Asset message={message} />
-                                </Container>
-                            )}
-                        </>
-                    ) : (
-                        <Container className={appStyles.Content}>
-                            <Asset spinner />
-                        </Container>
-                    )}
-                </Col>
-                <Col md={3} className='d-none d-lg-block p-0 p-lg-2'>
-                    <PopularProfiles />
-                </Col>
-            </Row>
+                        {hasLoaded ? (
+                            <>
+                                {posts.results.length ? (
+                                    <InfiniteScroll
+                                        children={posts.results.map((post) => (
+                                            <Post key={post.id} {...post} setPosts={setPosts} />
+                                        ))}
+                                        dataLength={posts.results.length}
+                                        loader={<Asset spinner />}
+                                        hasMore={!!posts.next}
+                                        next={() => fetchMoreData(posts, setPosts)}
+                                    />
+                                ) : (
+                                    <Container className={appStyles.Content}>
+                                        <Asset message={message} />
+                                    </Container>
+                                )}
+                            </>
+                        ) : (
+                            <Container className={appStyles.Content}>
+                                <Asset spinner />
+                            </Container>
+                        )}
+                    </Col>
+                    <Col md={3} className='d-none d-lg-block p-0 p-lg-2'>
+                        <PopularProfiles />
+                    </Col>
+                </Row>
+            </motion.div>
         </>
     );
 }
