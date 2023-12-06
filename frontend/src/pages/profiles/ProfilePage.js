@@ -4,7 +4,6 @@ import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import { ProfileEditDropdown } from "../../components/MoreDropdown";
 import Asset from "../../components/Asset";
-import Button from "react-bootstrap/Button";
 import styles from "../../styles/ProfilePage.module.css";
 import appStyles from "../../App.module.css";
 import { Image } from 'react-bootstrap';
@@ -105,7 +104,7 @@ function ProfilePage() {
                         ))
                     }
                 </Col>
-                {profile?.content && (<Col className="p-3">{profile.content}</Col>)}
+                {profile?.content && (<Col className="p-1">{profile.content}</Col>)}
             </Row>
         </>
     );

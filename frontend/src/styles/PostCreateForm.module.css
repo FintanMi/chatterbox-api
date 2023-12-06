@@ -24,3 +24,20 @@
 .FileInput {
     display: none;
 }
+
+.ChangeImage {
+    cursor: pointer;
+}
+
+.PostContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+    gap: 1rem;
+    row-gap: 1rem;
+}
+
+figure {
+    width: 100%;
+    height: 40vh;
+    object-fit: cover;
+}

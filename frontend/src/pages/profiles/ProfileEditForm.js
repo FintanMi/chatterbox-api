@@ -1,14 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useHistory, useParams } from "react-router-dom";
-
+import styles from "../../styles/PostCreateForm.module.css";
 import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
-
+import { motion } from 'framer-motion/dist/framer-motion';
 import { axiosReq } from '../../api/axiosDefault';
 import {
     useCurrentUser,
@@ -99,14 +98,22 @@ const ProfileEditForm = () => {
                     {message}
                 </Alert>
             ))}
-            <Button
+            <motion.button
                 onClick={() => history.goBack()}
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: 'spring', stiffness: 700 }}
+                className={styles.BtnPostCancel}
             >
                 Cancel
-            </Button>
-            <Button type="submit">
+            </motion.button>
+            <motion.button
+                type="submit"
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: 'spring', stiffness: 700 }}
+                className={styles.BtnPostCreate}
+            >
                 Save
-            </Button>
+            </motion.button>
         </>
     );
 
@@ -128,7 +135,7 @@ const ProfileEditForm = () => {
                             ))}
                             <div>
                                 <Form.Label
-                                    className='my-auto'
+                                    className={`my-auto ${styles.ChangeImage}`}
                                     htmlFor="image-upload"
                                 >
                                     Change the image
@@ -136,6 +143,7 @@ const ProfileEditForm = () => {
                             </div>
                             <Form.File
                                 id="image-upload"
+                                className={styles.FileInput}
                                 ref={imageFile}
                                 accept="image/*"
                                 onChange={(e) => {

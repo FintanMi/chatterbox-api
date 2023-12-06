@@ -45,3 +45,25 @@
 .Btn:hover {
     background-color: #4364F7;
 }
+
+.LoginContainer {
+    position: relative;
+    overflow: hidden;
+}
+
+.DynamicDivBtn {
+    background-color: rgba(0, 82, 212, 0.9);
+    color: #fff;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 5rem;
+}
+
+.WelcomeText {
+    display: flex;
+    align-self: center;
+    font-size: 20vh;
+    color: rgba(0, 82, 212, 0.9);
+    top: 0;
+}

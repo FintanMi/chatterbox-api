@@ -38,24 +38,3 @@ h5 {
 .UpdatedGap {
     margin-right: 1rem;
 }
-
-
-
-
-.PostNew {
-    display: flex;
-    border: none;
-    border-radius: 0 35px 0 0;
-    text-align: center;
-    background-color: #0052d4;
-    margin-bottom: 1rem;
-}
-
-.Link {
-    margin-bottom: 1.5rem;
-}
-
-.ContainerRight {
-    display: flex;
-    flex-direction: column;
-}

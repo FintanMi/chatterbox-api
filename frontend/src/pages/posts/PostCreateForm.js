@@ -109,7 +109,8 @@ function PostCreateForm() {
                 whileHover={{ scale: 1.1 }}
                 transition={{ type: 'spring', stiffness: 700 }}
                 type="submit"
-                className={styles.BtnPostCreate}>
+                className={styles.BtnPostCreate}
+            >
                 Create
             </motion.button>
         </div>
@@ -119,18 +120,24 @@ function PostCreateForm() {
         <Form onSubmit={handleSubmit}>
             <Row>
                 <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
-                    <Container
-                        className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
+                    <Container fluid
+                        className={`${appStyles.Content}
+                        ${styles.Container}
+                        d-flex flex-column justify-content-center`}
                     >
                         <Form.Group className="text-center">
                             {image ? (
                                 <>
                                     <figure>
-                                        <Image className={appStyles.Image} src={image} rounded />
+                                        <Image className={appStyles.Image}
+                                            src={image}
+                                            rounded
+                                        />
                                     </figure>
                                     <div>
                                         <Form.Label
                                             htmlFor="image-upload"
+                                            className={`my-auto ${styles.ChangeImage}`}
                                         >
                                             Change the image
                                         </Form.Label>

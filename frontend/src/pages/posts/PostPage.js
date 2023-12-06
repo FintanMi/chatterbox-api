@@ -13,7 +13,6 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import { fetchMoreData } from '../../utils/utils';
 import Asset from '../../components/Asset';
 import PopularProfiles from "../profiles/PopularProfiles";
-import Carousel from '../../components/Carousel';
 import { motion } from 'framer-motion/dist/framer-motion';
 
 function PostPage() {
@@ -42,7 +41,11 @@ function PostPage() {
     }, [id]);
 
     return (
-        <motion.div initial={{ width: 0 }} animate={{ width: '100%' }} exit={{ y: window.innerWidth, transition: { duration: 0.1 } }}>
+        <motion.div
+            initial={{ width: '0%' }}
+            animate={{ width: '100%', duration: 0.6, ease: [0.25, 1, 0.5, 1] }}
+            exit={{ x: window.innerWidth, transition: { duration: 0.1, ease: [0.25, 1, 0.5, 1] } }}
+        >
             <Row className="h-100">
                 <Col className="py-2 p-0 p-lg-2" lg={10}>
                     <PopularProfiles mobile />
@@ -81,13 +84,6 @@ function PostPage() {
                         )}
                     </Container>
                 </Col>
-                {/* <Col lg={4} className="d-none d-lg-block p-0 p-lg-2">
-                <PopularProfiles />
-                <Container>
-                    <Carousel />
-                </Container>
-
-            </Col> */}
             </Row>
         </motion.div>
     );

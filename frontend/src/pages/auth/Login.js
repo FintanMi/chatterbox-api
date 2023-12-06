@@ -11,7 +11,8 @@ import appStyles from "../../App.module.css";
 import { useSetCurrentUser } from "../../contexts/CurrentUserContext";
 import { useRedirect } from "../../hooks/useRedirect";
 import { setTokenTimestamp } from "../../utils/utils";
-import { motion } from 'framer-motion/dist/framer-motion';
+import { motion, MotionConfig } from 'framer-motion/dist/framer-motion';
+import DynamicDiv from './DynamicDiv';
 
 function Login() {
     const setCurrentUser = useSetCurrentUser();
@@ -43,77 +44,107 @@ function Login() {
         });
     };
 
+    let [expanded, setExpanded] = useState(false);
+
     return (
-        <div className={styles.LoginContainer}>
-            <Row className={styles.Row}>
-                <Col></Col>
-                <Col className="my-auto p-0 p-md-2" md={6}>
-                    <Container className={`${appStyles.Content} p-4`}>
-                        <h1 className={styles.Header}>Sign in</h1>
-                        <Form onSubmit={handleSubmit}>
-                            <Form.Group controlId="username">
-                                <Form.Label className='d-none'>Username</Form.Label>
-                                <Form.Control
-                                    className={styles.Input}
-                                    type="text"
-                                    placeholder="Username"
-                                    name="username"
-                                    value={username}
-                                    onChange={handleChange}
-                                />
-                            </Form.Group>
-                            {errors.username?.map((message, idx) => (
-                                <Alert variant='warning' key={idx}>
-                                    {message}
-                                </Alert>
-                            ))}
-
-                            <Form.Group controlId="password">
-                                <Form.Label className='d-none'>Password</Form.Label>
-                                <Form.Control
-                                    className={styles.Input}
-                                    type="password"
-                                    placeholder="Password"
-                                    name="password"
-                                    value={password}
-                                    onChange={handleChange}
-                                />
-                            </Form.Group>
-                            {errors.password?.map((message, idx) => (
-                                <Alert key={idx} variant="warning">
-                                    {message}
-                                </Alert>
-                            ))}
-
+        <MotionConfig transition={{ duration: 0.25 }}>
+            <div className={styles.LoginContainer}>
+                <Row className={styles.Row}>
+                    <Col></Col>
+                    <Col className="my-auto p-0 p-md-2" md={6}>
+                        <div className={styles.WelcomeText}>
+                            chatterbox
+                        </div>
+                        <div>
                             <motion.button
+                                className={styles.DynamicDivBtn}
                                 whileHover={{ scale: 1.05 }}
                                 transition={{ type: 'spring', stiffness: 700 }}
-                                className={styles.Btn}
-                                type="submit"
-                            >
-                                Submit
+                                onClick={() => setExpanded(!expanded)}>
+                                Login
                             </motion.button>
-                            {errors.non_field_errors?.map((message, idx) => (
-                                <Alert key={idx} variant='warning'>
-                                    {message}
-                                </Alert>
-                            ))}
-                        </Form>
+                        </div>
+                        <DynamicDiv>
+                            {expanded ? (<motion.div
 
-                    </Container>
-                    <Container className={`mt-3 ${appStyles.ContentLink}`}>
-                        <Link
-                            className={styles.Link}
-                            style={{ textDecoration: 'none' }}
-                            to="/register"
-                        >
-                            Don't have an account? <span className={styles.RegisterBtn}>Register now!</span>
-                        </Link>
-                    </Container>
-                </Col>
-                <Col></Col>
-            </Row>
-        </div>
+                            >
+                                <Container fluid className={`${appStyles.Content} p-4`}>
+                                    <motion.h1
+                                        initial={{ opacity: 0, translateX: -50, translateY: -50 }}
+                                        animate={{ opacity: 1, translateX: 0, translateY: 0 }}
+                                        transition={{ duration: 0.25, delay: 0.1 }}
+                                        className={styles.Header}>
+                                        Sign in
+                                    </motion.h1>
+                                    <Form onSubmit={handleSubmit}>
+                                        <Form.Group controlId="username">
+                                            <Form.Label className='d-none'>Username</Form.Label>
+                                            <Form.Control
+                                                className={styles.Input}
+                                                type="text"
+                                                placeholder="Username"
+                                                name="username"
+                                                value={username}
+                                                onChange={handleChange}
+                                            />
+                                        </Form.Group>
+                                        {errors.username?.map((message, idx) => (
+                                            <Alert variant='warning' key={idx}>
+                                                {message}
+                                            </Alert>
+                                        ))}
+
+                                        <Form.Group controlId="password">
+                                            <Form.Label className='d-none'>Password</Form.Label>
+                                            <Form.Control
+                                                className={styles.Input}
+                                                type="password"
+                                                placeholder="Password"
+                                                name="password"
+                                                value={password}
+                                                onChange={handleChange}
+                                            />
+                                        </Form.Group>
+                                        {errors.password?.map((message, idx) => (
+                                            <Alert key={idx} variant="warning">
+                                                {message}
+                                            </Alert>
+                                        ))}
+
+                                        <motion.button
+                                            whileHover={{ scale: 1.05 }}
+                                            transition={{ type: 'spring', stiffness: 700 }}
+                                            className={styles.Btn}
+                                            type="submit"
+                                        >
+                                            Submit
+                                        </motion.button>
+                                        {errors.non_field_errors?.map((message, idx) => (
+                                            <Alert key={idx} variant='warning'>
+                                                {message}
+                                            </Alert>
+                                        ))}
+                                    </Form>
+
+                                </Container>
+                                <Container fluid className={`mt-3 ${appStyles.ContentLink}`}>
+                                    <Link
+                                        to="/register"
+                                        className={styles.Link}
+                                        style={{ textDecoration: 'none' }}
+                                    >
+                                        Don't have an account? <span className={styles.RegisterBtn}>Register now!</span>
+                                    </Link>
+                                </Container>
+                            </motion.div>) : (
+                                <span></span>
+                            )}
+                        </DynamicDiv>
+                    </Col>
+                    <Col></Col>
+                </Row>
+            </div>
+        </MotionConfig>
     );
 }
 

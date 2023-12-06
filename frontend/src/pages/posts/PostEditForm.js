@@ -1,16 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
-
 import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
 import Image from "react-bootstrap/Image";
-
 import styles from "../../styles/PostCreateForm.module.css";
 import appStyles from "../../App.module.css";
-
+import { motion } from 'framer-motion/dist/framer-motion';
 import { useHistory } from "react-router";
 import { axiosReq } from '../../api/axiosDefault';
 import { useParams } from 'react-router';
@@ -116,14 +113,22 @@ function PostEditForm() {
                 </Alert>
             ))}
 
-            <Button
+            <motion.button
                 onClick={() => history.goBack()}
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: 'spring', stiffness: 700 }}
+                className={styles.BtnPostCancel}
             >
                 Cancel
-            </Button>
-            <Button type="submit">
+            </motion.button>
+            <motion.button
+                type="submit"
+                className={styles.BtnPostCreate}
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: 'spring', stiffness: 700 }}
+            >
                 Save
-            </Button>
+            </motion.button>
         </div>
     );
 
@@ -144,6 +149,7 @@ function PostEditForm() {
                             <div>
                                 <Form.Label
                                     htmlFor="image-upload"
+                                    className={`my-auto ${styles.ChangeImage}`}
                                 >
                                     Change the image
                                 </Form.Label>
@@ -154,6 +160,7 @@ function PostEditForm() {
                                 accept="image/*"
                                 onChange={handleChangeImage}
                                 ref={imageInput}
+                                className={styles.FileInput}
                             />
                         </Form.Group>
                         {errors?.image?.map((message, idx) => (
