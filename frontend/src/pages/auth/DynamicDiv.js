@@ -10,9 +10,14 @@ function DynamicDiv({ children }) {
             animate={{ height }}
             className='overflow-hidden'
         >
-            <div ref={ref} className='px-8 pb-8'>
-                {children}
-            </div>
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+            >
+                <div ref={ref} className='px-8 pb-8'>
+                    {children}
+                </div>
+            </motion.div>
         </motion.div>
     );
 

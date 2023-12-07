@@ -13,6 +13,9 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from '../profiles/PopularProfiles';
 import { motion } from 'framer-motion/dist/framer-motion';
+import chat from '../../assets/chat.png';
+import ContactForm from '../contact/ContactForm';
+import { Link } from 'react-router-dom';
 
 function PostsPage({ message, filter = "" }) {
     const [posts, setPosts] = useState({ results: [] });
@@ -96,6 +99,13 @@ function PostsPage({ message, filter = "" }) {
                         </Col>
                         <Col lg={3} className='d-none d-lg-block p-0 p-lg-2'>
                             <PopularProfiles />
+                            <div>
+                                <Link to='/contact/'>
+                                    <div className={`mt-6 ${styles.Chat}`}>
+                                        <img src={chat} height={40} />
+                                    </div>
+                                </Link>
+                            </div>
                         </Col>
                     </Row>
                 </Container>
