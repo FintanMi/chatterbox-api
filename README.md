@@ -1,39 +1,157 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Chatterbox
 
-Welcome,
+Chatterbox is a social media site for sharing images where users can follow and comment on all content in an unrestrcited manor.
+<br>
+The live link can be found here: []()
+<br>
+mockup goes here
 
-This is the Code Institute student template for Codeanywhere. If you are using Gitpod then you need [this template](https://github.com/Code-Institute-Org/gitpod-full-template) instead.  We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+### Site Goals
+Chatterbox is a site for everyone to post their favourite photos and maybe find new people to follow based on the content they are providing.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **August 30th, 2023**
+### Agile Planning
+This project was developed utilising agile principles where features were added in small, incremental sprints over numerous weeks.
 
-## Codeanywhere Reminders
+<hr>
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+## Epics
 
-`python3 -m http.server`
+**Set up**
+This Epic focused on the backend portion of the project with the Django Rest Framework being implemented for the API.
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+**Posts**
+This Epic covers the API endpoint creation and database connections relating to the CRUD functionality of user posts, which includes like activity.
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
+**Comments**
 
-`http_server`
+This Epic covers all API endpoint creation and database connections relating to the CRUD functionality of user comments in relation to posts.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+**Profiles**
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+This Epic covers all API endpoint creation and database connections relating to the CRUD functionality of user created profiles, which includes follow/unfollow functionality.
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+<br>
 
-To log into the Heroku toolbelt CLI:
+### User Stories
+**Setup**
+* As a developer, I need to create the backend in order to have features present for users on the site
+* As a developer, I need to create a connection to Cloudinary so static images can be uploaded
+* As a user, I want to be able to create an account and have access to features on the site
 
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+**Posts**
+* As a user, I want to be able to create, view, edit or delete a post
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+**Profiles**
+* As a developer, I want a user to have a blank profile page with a default avatar photo when its created by any user
+* As a user, I want to see other profiles that have been created
 
----
+### API Endpoints
+User story
+`As a developer, I need to create a base project set up so that I can build out the features that will be shown on the frontend.`
 
-Happy coding!
+Implementation:
+
+The project was created with all neccessary packages installed and frozen into the requirements.
+
+The settings were also edited to hide any secret variables and set dev and production environments apart.
+
+User Story
+`As a developer, I have to connect Cloudinary to the project so static images can be uploaded by the users`
+
+Implementation:
+A Cloudinary account was created, the API environment was added to the settings file to ensure photos could be uploaded
+
+User Story
+`As a user I can create a new account so that I can access all the features for signed up users`
+
+Implementation:
+Django rest framework and dj_rest_auth were installed and added to the url patterns and site packages to make use of their built in authentication system
+
+User Story:
+
+`As a user, I want to be able to view create, edit or delete a post`
+
+Implementation:
+
+Endpoint: /posts/
+
+Methods:
+* POST - Used to create post
+* GET - Used to get a list of posts
+
+Endpoint: /posts/<int:pk>/
+
+Methods:
+* GET - Get a single post
+* PUT - Used to update a single post
+* DELETE - Used to delete a post
+
+## Database Design
+## Security
+A permissions class was added called IsOwnerOrReadOnly to ensure only users who create the content are able to edit or delete it.
+
+## Technologies
+
+* Django - Main framework used for application creation
+* Django REST Framework - Used for creating the API
+* Heroku - Used for hosting the application
+* Git - Used for version control
+* Github - Repository for storing code base and docs
+<br>
+## Python Packages
+* Django
+* dj-rest-auth
+* dj-database-url
+* django-allauth
+* django-cors-headers
+* django-filter
+* django-storages
+* djangorestframework
+* djangorestframework-simplejwt
+* gunicorn
+* Pillow
+* psycopg2
+* PyJWT
+
+Installed dependencies:
+* Cloudinary
+
+## Testing
+<br>
+
+## Deployment
+## Version Control
+The site was created using the Visual Studio Code editor and pushed to github.
+The following git commands were used throughout development to push code to the remote repo:
+
+```git add <file>``` - This command was used to add the file(s) to the staging area before they are committed.
+
+```git commit -m “commit message”``` - This command was used to commit changes to the local repository queue ready for the final step.
+
+```git push``` - This command was used to push all committed code to the remote repository on github.
+<br>
+## Heroku Deployment
+The site was deployed to Heroku. The steps to deploy are as follows:
+
+* Navigate to heroku and create an account
+* Click the new button in the top right corner
+* Select create new app
+* Enter app name
+* Select region and click create app
+* Click the resources tab and search for Heroku Postgres
+* Select hobby dev and continue
+* Go to the settings tab and then click reveal config vars
+* Add the following config vars:
+  *
+  *
+  *
+  *
+* Click the deploy tab
+* Scroll down to Connect to GitHub and sign in / authorize when prompted
+* In the search box, find the repositoy you want to deploy and click connect
+* Scroll down to Manual deploy and choose the main branch
+* Click deploy
+<br>
+
+
+  
