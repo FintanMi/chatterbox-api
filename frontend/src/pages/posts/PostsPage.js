@@ -15,8 +15,10 @@ import PopularProfiles from '../profiles/PopularProfiles';
 import { motion } from 'framer-motion/dist/framer-motion';
 import chat from '../../assets/chat.png';
 import { Link } from 'react-router-dom';
+import { useCurrentUser } from '../../contexts/CurrentUserContext';
 
 function PostsPage({ message, filter = "" }) {
+    const currentUser = useCurrentUser();
     const [posts, setPosts] = useState({ results: [] });
     const [hasLoaded, setHasLoaded] = useState(false);
     const { pathname } = useLocation();
@@ -43,6 +45,8 @@ function PostsPage({ message, filter = "" }) {
             clearTimeout(countdown);
         };
     }, [filter, query, pathname]);
+
+    const [openModal, setOpenModal] = useState(false);
 
     return (
         <>
@@ -98,16 +102,6 @@ function PostsPage({ message, filter = "" }) {
                         </Col>
                         <Col lg={3} className='d-none d-lg-block p-0 p-lg-2'>
                             <PopularProfiles />
-                            <motion.div>
-                                <Link to='/contact/'>
-                                    <motion.div
-                                        className={`mt-6 ${styles.Chat}`}
-                                        whileHover={{ scale: 1.1 }}
-                                    >
-                                        <img src={chat} height={40} alt='chat icon' />
-                                    </motion.div>
-                                </Link>
-                            </motion.div>
                         </Col>
                     </Row>
                 </Container>

@@ -46,7 +46,7 @@ const ContactForm = () => {
     };
 
     const textFields = (
-        <div className='text-center'>
+        <div className={`text-center ${styles.ContactContainer}`}>
             <Form.Group className={styles.Contact}>
                 <Form.Label>Having an Issue?</Form.Label>
                 <Form.Control
@@ -98,15 +98,14 @@ const ContactForm = () => {
     );
 
     return (
-        <div>
-            <Form onSubmit={handleSubmit}>
-                <Row>
-                    <Col></Col>
-                    <Col md={6}><Container>{textFields}</Container></Col>
-                    <Col></Col>
-                </Row>
-            </Form>
-        </div>
+
+        <Form onSubmit={handleSubmit}>
+            <Row>
+                <Col></Col>
+                <Col md={6}>{textFields}</Col>
+                <Col></Col>
+            </Row>
+        </Form>
     );
 };
 

@@ -57,3 +57,45 @@ i:hover {
     position: sticky;
     top: 102px;
 }
+
+@media screen and (max-width: 900px) {
+    .FixedContainer {
+        position: unset;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .FixedContainer {
+        position: unset;
+        padding: 5px;
+        margin-top: 1.5rem;
+    }
+}
+
+.Chat {
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    right: 11.5rem;
+    bottom: 1rem;
+    padding-top: 1rem;
+}
+
+.ChatContainer {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+@media screen and (max-width: 900px) {
+    .Content {
+        position: unset;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .Content {
+        position: unset;
+        padding: 5px;
+        margin-top: 1.5rem;
+    }
+}

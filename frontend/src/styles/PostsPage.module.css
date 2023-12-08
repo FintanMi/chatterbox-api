@@ -25,12 +25,3 @@
     cursor: default;
     color: #cfced3;
 }
-
-.Chat {
-    position: fixed;
-    align-items: center;
-    justify-content: center;
-    right: 11.5rem;
-    bottom: 1rem;
-    padding-top: 1rem;
-}

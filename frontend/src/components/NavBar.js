@@ -10,6 +10,7 @@ import Avatar from './Avatar';
 import axios from 'axios';
 import useClickOutsideToggle from '../hooks/useClickOutsideToggle';
 import { removeTokenTimestamp } from '../utils/utils';
+import ContactForm from '../pages/contact/ContactForm';
 
 const NavBar = () => {
     const currentUser = useCurrentUser();
@@ -83,6 +84,13 @@ const NavBar = () => {
                 style={{ textDecoration: 'none' }}
             >
                 <i className="fas fa-plus-square"></i> Create Post
+            </NavLink>
+            <NavLink
+                to='/contact'
+                className={styles.NavLink}
+                style={{ textDecoration: 'none' }}
+            >
+                <i className="fas fa-comment"></i> Contact Us
             </NavLink>
         </>
     );
