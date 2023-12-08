@@ -14,7 +14,6 @@ import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from '../profiles/PopularProfiles';
 import { motion } from 'framer-motion/dist/framer-motion';
 import chat from '../../assets/chat.png';
-import ContactForm from '../contact/ContactForm';
 import { Link } from 'react-router-dom';
 
 function PostsPage({ message, filter = "" }) {
@@ -99,13 +98,16 @@ function PostsPage({ message, filter = "" }) {
                         </Col>
                         <Col lg={3} className='d-none d-lg-block p-0 p-lg-2'>
                             <PopularProfiles />
-                            <div>
+                            <motion.div>
                                 <Link to='/contact/'>
-                                    <div className={`mt-6 ${styles.Chat}`}>
-                                        <img src={chat} height={40} />
-                                    </div>
+                                    <motion.div
+                                        className={`mt-6 ${styles.Chat}`}
+                                        whileHover={{ scale: 1.1 }}
+                                    >
+                                        <img src={chat} height={40} alt='chat icon' />
+                                    </motion.div>
                                 </Link>
-                            </div>
+                            </motion.div>
                         </Col>
                     </Row>
                 </Container>

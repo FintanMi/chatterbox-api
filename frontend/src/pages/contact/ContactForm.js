@@ -21,10 +21,6 @@ const ContactForm = () => {
     const { issue, body } = contactMessage;
     const history = useHistory();
 
-    const [modalOpen, setModalOpen] = useState(false);
-    const closeModal = () => setModalOpen(false);
-    const openModal = () => setModalOpen(true);
-
     const handleChange = (e) => {
         setContactMessage({
             ...contactMessage,
@@ -40,9 +36,8 @@ const ContactForm = () => {
         formData.append('body', body);
 
         try {
-            const { data } = await axiosReq.post('/contact/', formData);
+            await axiosReq.post('/contact/', formData);
             history.goBack();
-            openModal();
         } catch (err) {
             if (err.response?.status !== 401) {
                 setErrors(err.response?.data);
