@@ -112,6 +112,7 @@ function ProfilePage() {
     const mainProfilePosts = (
         <>
             <hr />
+            <span className='text-center'><h5>Chatterbox Top Photos</h5></span>
             <ProfileImageSlider />
             <hr />
             {profilePosts.results.length ? (

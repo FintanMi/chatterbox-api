@@ -6,7 +6,6 @@
 
 .App {
     font-family: 'Quicksand', 'Ubuntu', sans-serif;
-    /* background-color: rgba(0, 82, 212, 0.65); */
     background-color: #b3cbf2;
     color: #e6e6ea;
     min-height: 100vh;
@@ -39,7 +38,6 @@ i:hover {
 }
 
 .ContentLink {
-    /* background-color: #fff; */
     padding: 0.5rem;
     border-radius: 2rem 0 2rem 0;
     background-color: #0052D4;
