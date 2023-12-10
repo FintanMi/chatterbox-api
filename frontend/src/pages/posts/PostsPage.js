@@ -13,12 +13,8 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import { fetchMoreData } from "../../utils/utils";
 import PopularProfiles from '../profiles/PopularProfiles';
 import { motion } from 'framer-motion/dist/framer-motion';
-import chat from '../../assets/chat.png';
-import { Link } from 'react-router-dom';
-import { useCurrentUser } from '../../contexts/CurrentUserContext';
 
 function PostsPage({ message, filter = "" }) {
-    const currentUser = useCurrentUser();
     const [posts, setPosts] = useState({ results: [] });
     const [hasLoaded, setHasLoaded] = useState(false);
     const { pathname } = useLocation();
@@ -39,14 +35,12 @@ function PostsPage({ message, filter = "" }) {
         setHasLoaded(false);
         const countdown = setTimeout(() => {
             fetchPosts();
-        }, 750);
+        }, 200);
 
         return () => {
             clearTimeout(countdown);
         };
     }, [filter, query, pathname]);
-
-    const [openModal, setOpenModal] = useState(false);
 
     return (
         <>
@@ -57,9 +51,6 @@ function PostsPage({ message, filter = "" }) {
             >
                 <Container fluid>
                     <Row className="h-100">
-                        {/* <Col md={3} className="d-none d-lg-block p-0 p-lg-2">
-                            <p>something goes here</p>
-                        </Col> */}
                         <Col className='py-2 p-0 p-lg-2' lg={9} md={9} sm={9}>
                             <PopularProfiles mobile />
                             <i className={`fas fa-search ${styles.SearchIcon}`} />

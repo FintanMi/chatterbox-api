@@ -13,12 +13,20 @@ function ProfileImageSlider() {
 
     return (
         <div>
-            <motion.div className={styles.container} ref={slider} whileTap={{ cursor: 'grabbing' }}>
-                <motion.div drag='x' dragConstraints={{ right: 0, left: -width }} className={styles.containerInner}>
+            <motion.div
+                className={styles.container}
+                ref={slider}
+                whileTap={{ cursor: 'grabbing' }}
+            >
+                <motion.div
+                    drag='x'
+                    dragConstraints={{ right: 0, left: -width }}
+                    className={styles.containerInner}
+                >
                     {images.map(image => {
                         return (
-                            <motion.div className={styles.Item}>
-                                <img src={image} alt='slider' />
+                            <motion.div className={styles.Item} key={image}>
+                                <img className={styles.ItemImg} src={image} alt='slider' />
                             </motion.div>
                         );
                     })}

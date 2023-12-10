@@ -10,7 +10,6 @@ import Avatar from './Avatar';
 import axios from 'axios';
 import useClickOutsideToggle from '../hooks/useClickOutsideToggle';
 import { removeTokenTimestamp } from '../utils/utils';
-import ContactForm from '../pages/contact/ContactForm';
 
 const NavBar = () => {
     const currentUser = useCurrentUser();
@@ -109,9 +108,10 @@ const NavBar = () => {
                     ref={ref}
                     onClick={() => setBurgerExpand(!burgerExpand)}
                     aria-controls="basic-navbar-nav"
+                    className={styles.Burger}
                 />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="ml-auto text-right">
+                    <Nav className="ml-auto text-center">
                         {currentUser ? loggedInIcons : loggedOutIcons}
                     </Nav>
                 </Navbar.Collapse>

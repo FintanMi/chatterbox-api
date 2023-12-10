@@ -61,7 +61,7 @@ REST_AUTH_SERIALIZERS = {
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DEV')
 
 ALLOWED_HOSTS = ['8000-fintanmi-chatterbox-api-djkg01t65v.us2.codeanyapp.com',
                  os.environ.get('ALLOWED_HOST'), 'localhost']

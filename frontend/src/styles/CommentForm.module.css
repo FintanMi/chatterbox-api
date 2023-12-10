@@ -5,8 +5,8 @@
 
 .Button {
     border: none;
-    background-color: #000815;
-    color: #fff;
+    color: #334766;
+    background-color: #fff;
     border-radius: 100px;
     padding: 2px 10px 4px 10px;
     min-width: 75px;
@@ -15,8 +15,8 @@
 
 .Button:hover {
     cursor: pointer;
-    background-color: #fff;
-    color: #000;
+    color: #fff;
+    background-color: #334766;
 }
 
 .Chars {

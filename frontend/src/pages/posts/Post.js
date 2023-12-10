@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import Card from "react-bootstrap/Card";
 import Media from "react-bootstrap/Media";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
@@ -9,7 +9,6 @@ import { useCurrentUser } from "../../contexts/CurrentUserContext";
 import Avatar from "../../components/Avatar";
 import { axiosRes } from '../../api/axiosDefault';
 import { MoreDropdown } from "../../components/MoreDropdown";
-import { motion, useScroll } from 'framer-motion/dist/framer-motion';
 
 const Post = (props) => {
     const {

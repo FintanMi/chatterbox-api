@@ -1,3 +1,16 @@
 .Container {
     min-height: 343px;
+    object-fit: cover;
+}
+
+.EditImageContainer {
+    overflow: hidden;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 375px) {
+    Image {
+        height: 85vh;
+        width: 85vw;
+    }
 }

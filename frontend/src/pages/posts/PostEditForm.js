@@ -139,14 +139,14 @@ function PostEditForm() {
                     <Container className={appStyles.Content}>{textFields}</Container>
                 </Col>
                 <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
-                    <Container
+                    <Container fluid
                         className={`${appStyles.Content} ${styles.Container} d-flex flex-column justify-content-center`}
                     >
-                        <Form.Group className="text-center">
+                        <Form.Group className={`text-center ${styles.EditImage}`}>
                             <figure>
-                                <Image className={appStyles.Image} src={image} rounded />
+                                <Image className={styles.Image} src={image} style={{ height: '40vh', objectFit: 'cover' }} rounded />
                             </figure>
-                            <div>
+                            <div className={styles.EditImageContainer}>
                                 <Form.Label
                                     htmlFor="image-upload"
                                     className={`my-auto ${styles.ChangeImage}`}

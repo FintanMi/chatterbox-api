@@ -4,7 +4,7 @@
 
 .BtnPostCancel {
     border-radius: 15px 0 15px 15px;
-    color: #002155;
+    color: #334766;
     background-color: #e6eefb;
     border: none;
     padding: 0.25rem 0;
@@ -15,7 +15,7 @@
 .BtnPostCreate {
     border-radius: 0 15px 15px 15px;
     color: #e6eefb;
-    background-color: #00317f;
+    background-color: #334766;
     padding: 0.25rem 0;
     border: none;
     width: 40%;
