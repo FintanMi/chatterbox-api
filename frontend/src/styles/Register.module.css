@@ -61,4 +61,6 @@
     font-size: 15vh;
     color: #334766;
     top: 0;
+    left: 0;
+    overflow: hidden;
 }

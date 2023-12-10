@@ -61,4 +61,19 @@
     font-size: 20vh;
     color: #334766;
     top: 0;
+    left: 0;
+    width: 50%;
+}
+
+@media screen and (max-width: 450px) {
+    .WelcomeText {
+        display: flex;
+        align-self: center;
+        font-size: 3rem;
+        width: 10%;
+    }
+
+    .Link {
+        margin-bottom: 2rem;
+    }
 }

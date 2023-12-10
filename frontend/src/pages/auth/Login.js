@@ -46,15 +46,29 @@ function Login() {
 
     let [expanded, setExpanded] = useState(false);
 
+    const slidingText = {
+        initial: {
+            x: 0,
+        },
+        animate: {
+            x: "-100%",
+            transition: {
+                repeat: Infinity,
+                repeatType: "mirror",
+                duration: 20,
+            },
+        },
+    };
+
     return (
         <MotionConfig transition={{ duration: 0.25 }}>
             <div>
                 <Row className={styles.Row}>
                     <Col></Col>
                     <Col className="my-auto p-0 p-md-2" md={6}>
-                        <div className={styles.WelcomeText}>
+                        <motion.div className={styles.WelcomeText} variants={slidingText} initial='initial' animate='animate'>
                             chatterbox
-                        </div>
+                        </motion.div>
                         <div>
                             <motion.button
                                 className={styles.DynamicDivBtn}
