@@ -2,9 +2,21 @@
     color: #e6eefb;
 }
 
+@media screen and (max-width: 430px) {
+    .ContactContainer {
+        margin-top: 2rem;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    .ContactContainer {
+        margin-top: 3.5rem;
+    }
+}
+
 .BtnPostCancel {
     border-radius: 15px 0 15px 15px;
-    color: #002155;
+    color: #001940;
     background-color: #e6eefb;
     border: none;
     padding: 0.25rem 0;
@@ -15,7 +27,7 @@
 .BtnPostCreate {
     border-radius: 0 15px 15px 15px;
     color: #e6eefb;
-    background-color: #00317f;
+    background-color: #001940;
     padding: 0.25rem 0;
     border: none;
     width: 40%;

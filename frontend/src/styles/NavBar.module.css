@@ -14,6 +14,19 @@
     position: relative;
 }
 
+@media screen and (max-width: 430px) {
+    .Navlink {
+        font-size: 1rem;
+        color: #e6e6ea;
+        padding-right: 0.5rem;
+        padding-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        align-self: center;
+        position: relative;
+    }
+}
+
 .Navlink:active {
     color: #777;
 }

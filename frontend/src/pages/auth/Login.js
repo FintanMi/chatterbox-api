@@ -66,7 +66,12 @@ function Login() {
                 <Row className={styles.Row}>
                     <Col></Col>
                     <Col className="my-auto p-0 p-md-2" md={6}>
-                        <motion.div className={styles.WelcomeText} variants={slidingText} initial='initial' animate='animate'>
+                        <motion.div
+                            className={styles.WelcomeText}
+                            variants={slidingText}
+                            initial='initial'
+                            animate='animate'
+                        >
                             chatterbox
                         </motion.div>
                         <div>

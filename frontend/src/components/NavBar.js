@@ -95,7 +95,12 @@ const NavBar = () => {
     );
 
     return (
-        <Navbar expanded={burgerExpand} className={styles.NavBar} expand="md" fixed='top'>
+        <Navbar
+            expanded={burgerExpand}
+            className={styles.NavBar}
+            expand="md"
+            fixed='top'
+        >
             <Container>
                 <NavLink to='/' style={{ textDecoration: 'none' }}>
                     <Navbar.Brand>
