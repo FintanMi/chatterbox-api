@@ -48,7 +48,7 @@ function Login() {
 
     return (
         <MotionConfig transition={{ duration: 0.25 }}>
-            <div className={styles.LoginContainer}>
+            <div>
                 <Row className={styles.Row}>
                     <Col></Col>
                     <Col className="my-auto p-0 p-md-2" md={6}>
