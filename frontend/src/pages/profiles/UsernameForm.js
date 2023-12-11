@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
-
 import Alert from "react-bootstrap/Alert";
-import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
-
+import { motion } from 'framer-motion/dist/framer-motion';
 import { useHistory, useParams } from "react-router-dom";
 import { axiosRes } from '../../api/axiosDefault';
 import {
@@ -69,16 +67,22 @@ const UsernameForm = () => {
                                 {message}
                             </Alert>
                         ))}
-                        <Button
+                        <motion.button
                             onClick={() => history.goBack()}
+                            whileHover={{ scale: 1.1 }}
+                            transition={{ type: 'spring', stiffness: 700 }}
+                            className={appStyles.BtnPostCancel}
                         >
                             Cancel
-                        </Button>
-                        <Button
+                        </motion.button>
+                        <motion.button
                             type="submit"
+                            whileHover={{ scale: 1.1 }}
+                            transition={{ type: 'spring', stiffness: 700 }}
+                            className={appStyles.BtnPostCreate}
                         >
                             Save
-                        </Button>
+                        </motion.button>
                     </Form>
                 </Container>
             </Col>

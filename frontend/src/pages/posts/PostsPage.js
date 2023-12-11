@@ -46,8 +46,8 @@ function PostsPage({ message, filter = "" }) {
         <>
             <motion.div
                 initial={{ width: 0 }}
-                animate={{ width: '100%', duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
-                exit={{ x: window.innerWidth, transition: { duration: 0.6, ease: [0.25, 1, 0.5, 1] } }}
+                animate={{ width: '100%', duration: 0.8, ease: [0.4, 1, 0.5, 1] }}
+                exit={{ x: window.innerWidth, transition: { duration: 0.75, ease: [0.4, 1, 0.5, 1] } }}
             >
                 <Container fluid>
                     <Row className="h-100">

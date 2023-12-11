@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
-
 import Alert from "react-bootstrap/Alert";
-import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
-
+import { motion } from 'framer-motion/dist/framer-motion';
 import { useHistory, useParams } from "react-router-dom";
 import { axiosRes } from '../../api/axiosDefault';
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
@@ -34,7 +32,6 @@ const UserPasswordForm = () => {
 
     useEffect(() => {
         if (currentUser?.profile_id?.toString() !== id) {
-            // redirect user if they are not the owner of this profile
             history.push("/");
         }
     }, [currentUser, history, id]);
@@ -85,16 +82,22 @@ const UserPasswordForm = () => {
                                 {message}
                             </Alert>
                         ))}
-                        <Button
+                        <motion.button
                             onClick={() => history.goBack()}
+                            whileHover={{ scale: 1.1 }}
+                            transition={{ type: 'spring', stiffness: 700 }}
+                            className={appStyles.BtnPostCancel}
                         >
                             Cancel
-                        </Button>
-                        <Button
+                        </motion.button>
+                        <motion.button
                             type="submit"
+                            whileHover={{ scale: 1.1 }}
+                            transition={{ type: 'spring', stiffness: 700 }}
+                            className={appStyles.BtnPostCreate}
                         >
                             Save
-                        </Button>
+                        </motion.button>
                     </Form>
                 </Container>
             </Col>
