@@ -4,7 +4,6 @@
     justify-content: center;
     flex-direction: column;
     margin-top: 10rem;
-    
 }
 
 .PageNotFoundContainer {
@@ -20,10 +19,19 @@
 }
 
 .GoBackBtn {
-    margin-right: 1rem;
-    color: #0052D4;
-    background-color: #fff;
-    border: 1px solid #0052D4;
+    /* margin-right: 1rem; */
+    padding: 0.5rem 1rem;
+    color: #001940;
+    background-color: #e6e6ea;
+    border: 1px solid #001940;
     border-radius: 35px;
     margin-top: 1.2rem;
+}
+
+.ball {
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+    color: #e6e6ea;
+    margin: 3rem auto;
 }
