@@ -1,8 +1,17 @@
-.DropdownItem {
+.DropdownItemEdit {
     display: inline-block;
     max-width: 50%;
     padding: 0px 0.5rem;
     color: #e6e6ea;
+    background-color: #001940;
+}
+
+.DropdownItemEdit:hover {
+    display: inline-block;
+    max-width: 50%;
+    padding: 0px 0.5rem;
+    color: #e6e6ea;
+    background-color: #001940;
 }
 
 .DropdownItemDelete {
