@@ -2,9 +2,8 @@
 
 Chatterbox is a social media site for sharing images where users can follow and comment on all content in an unrestrcited manor.
 <br>
-The live link can be found here: []()
+The live link can be found here: [Live Site - Chatterbox](https://chatterboxapi-3494af6fad30.herokuapp.com/)
 <br>
-mockup goes here
 
 ### Site Goals
 Chatterbox is a site for everyone to post their favourite photos and maybe find new people to follow based on the content they are providing.
@@ -29,6 +28,10 @@ This Epic covers all API endpoint creation and database connections relating to 
 **Profiles**
 
 This Epic covers all API endpoint creation and database connections relating to the CRUD functionality of user created profiles, which includes follow/unfollow functionality.
+
+**Contact**
+
+This Epic covered the API endpoint creation and database connection relating to the functionality of user contact in relation to app performance.
 
 <br>
 
