@@ -170,6 +170,7 @@ When a user is logged in, the following navigation items are displayed:
 * Liked
 * Sign Out
 * Profile
+[!Navbar](docs/nav_logged_in.png)
 
 Logged out users:
 
@@ -177,6 +178,7 @@ When a user is logged out, the following navigation items are displayed:
 * Chatterbox logo
 * Login
 * Register
+[!Navbar](docs/nav_logged_out.png)
 
 **Home**
 
