@@ -426,7 +426,9 @@ The app behaved as expected
 
 ## Validators
 
+All CSS files were check and validated on W3C CSS validator website:
 
+![CSS](docs/csscheck.png)
 
 ## Deployment
 ## Version Control
