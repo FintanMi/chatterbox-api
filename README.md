@@ -29,6 +29,10 @@ This Epic covers all API endpoint creation and database connections relating to 
 
 This Epic covers all API endpoint creation and database connections relating to the CRUD functionality of user created profiles, which includes follow/unfollow functionality.
 
+**Contact**
+
+This Epic covered the API endpoint creation and database connection relating to the functionality of user contact in relation to app performance.
+
 <br>
 
 ### User Stories
