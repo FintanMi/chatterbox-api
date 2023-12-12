@@ -500,6 +500,116 @@ The popular profile component will display on the right side of the screen
 
 Result:
 Everything works as it should
+<hr>
+
+## Posts
+**Ensure post detail page is displayed when clicked**
+
+1. Go to the profile page
+2. Click on any post
+
+Expected:
+The user will be redirected to that posts page
+
+Result:
+Everything works as it should
+<hr>
+
+**Ensure posts can be edited by users who created them**
+
+1. Click on post that you've created
+2. Click the three vertical dots under the image
+3. Click the blue edit icon
+4. Edit & save the post
+
+Expected:
+The post will have been updated
+
+Result:
+Everything works as expected
+<hr>
+
+**Ensure posts can be deleted by users who created them**
+
+1. Click on post that you've created
+2. Click the three vertical dots under the image
+3. Click the red delete icon
+
+Expected:
+The post will have been deleted and the user will be redirected to the home page
+
+Result:
+Everything works as expected
+<hr>
+
+**Ensure posts can't be liked by their owner**
+
+1. Bring your cursor over the heart icon
+2. A message will appear saying you can't like your own post
+
+Expected:
+A post owner can't like their own post
+
+Result:
+Everything works as expected
+<hr>
+
+**Ensure posts displays the correct amount of comments**
+
+1. Find a post and comment on it
+2. The comment icon should update when you've posted your comment
+
+Expected:
+The comment count will rise when you post a comment and decrease when you delete a comment
+
+Result:
+Everything works as expected
+<hr>
+
+**Test to see if the infinite scroll works**
+
+1. Create more than a dozen posts
+2. Scroll down and when you get past the twelfth post, new posts will have loaded and the scroll bar will shrink
+
+Expected:
+Posts will load automatically when a user scrolls down the page when there are a dozen posts
+
+Results:
+Everything works as expected
+<hr>
+
+**Test the liked page**
+
+1. When logged in, click the liked link
+
+Expected:
+Posts that the logged in user has liked will appear
+
+Result:
+Everything works as expected
+<hr>
+
+**Test the feed page**
+
+1. When logged in, click the feed link
+
+Expected:
+Posts will appear of profiles the user has followed
+
+Result:
+Everything works as it should
+<hr>
+
+**Ensure a post can be liked**
+
+1. Click the heart icon of a users post
+
+Expected:
+Logged in users can like a post of any post that isn't their own
+
+Result:
+Everything works as expected
+<hr>
 
 ## Unit Testing
 ## Lighthouse
