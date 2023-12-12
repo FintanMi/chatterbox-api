@@ -8,7 +8,7 @@ import { axiosReq } from '../../api/axiosDefault';
 import { useRedirect } from '../../hooks/useRedirect';
 import styles from '../../styles/Contact.module.css';
 import { motion } from 'framer-motion/dist/framer-motion';
-
+import { toast } from 'react-hot-toast';
 
 const ContactForm = () => {
     useRedirect('loggedOut');
@@ -36,6 +36,7 @@ const ContactForm = () => {
 
         try {
             await axiosReq.post('/contact/', formData);
+            toast.success("Your message has been received!");
             history.goBack();
         } catch (err) {
             if (err.response?.status !== 401) {
@@ -46,7 +47,9 @@ const ContactForm = () => {
 
     const textFields = (
         <div className={`text-center ${styles.ContactContainer}`}>
-            <Form.Group className={styles.Contact}>
+            <Form.Group
+                className={styles.Contact}
+            >
                 <Form.Label>Having an Issue?</Form.Label>
                 <Form.Control
                     type="text"
@@ -93,18 +96,19 @@ const ContactForm = () => {
             >
                 Send
             </motion.button>
-        </div>
+        </div >
     );
 
     return (
-
-        <Form onSubmit={handleSubmit}>
-            <Row>
-                <Col></Col>
-                <Col md={6}>{textFields}</Col>
-                <Col></Col>
-            </Row>
-        </Form>
+        <>
+            <Form onSubmit={handleSubmit}>
+                <Row>
+                    <Col></Col>
+                    <Col md={6}>{textFields}</Col>
+                    <Col></Col>
+                </Row>
+            </Form>
+        </>
     );
 };
 
