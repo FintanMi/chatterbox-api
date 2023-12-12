@@ -372,7 +372,7 @@ Installed dependencies:
 ## Lighthouse
 
 Lighthouse testing on the app showed accessibility, best practices and seo to be performing well but performance was poor.
-![lighthouse](doc/pp5_lighthouse.PNG)
+![lighthouse](doc/pp5_lighthouse.png)
 <br>
 
 ## Deployment
