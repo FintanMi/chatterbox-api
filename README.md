@@ -400,7 +400,106 @@ Result:
 The user will be redirected to the home page
 <hr>
 
-**
+## Profiles
+**Test if a user can edit their profile**
+
+1. Go to profile page & click the three vertical dots
+2. Click edit profile
+3. Fill out the form
+4. Change the image
+5. Save it
+
+Expected:
+The profile will display the updated information
+
+Result:
+The user has updated their profile
+<hr>
+
+**Test if user can follow other profiles**
+
+1. Click the follow button
+
+Expected:
+The user will be following the desired profile and the follow button will change to Unfollow
+
+Result:
+Everything works as it should
+<hr>
+
+**Ensure the unfollow button works**
+
+1. Click the unfollow button
+
+Expeceted:
+The user will no longer be following the profile and the unfollow button will turn to follow
+
+Result:
+Everything works as it should
+<hr>
+
+**Test if user can change password**
+
+1. Go to profile page & click the three vertical dots
+2. Click change password
+3. Fill out the form
+4. Save it
+
+Expeceted:
+The user will have updated their password
+
+Result:
+Everything works as it should
+<hr>
+
+**Test if user can change username**
+
+1. Go to profile page & click the three vertical dots
+2. Click change username
+3. Fill out the form
+4. Save it
+
+Expeceted:
+The user will have updated their username
+
+Result:
+Everything works as it should
+<hr>
+
+**Test if horizontal scroll bar moves**
+
+1. Go to profile page & locate the image container
+2. Grab a photo and move it left or right
+3. Photos should move and stay in the container
+
+Expected:
+The user will be able to grab a photo and flick between all photos in a horizontal fashion
+
+Result:
+Everything works as it should
+
+**Test if rating component works**
+
+1. Go to profile page & locate the stars below the horizontal image container
+2. Hover over the stars and if the user is hovering over three stars then three stars will be filled and the number will update too
+3. Click on the star to give a rating to the photo container
+4. The number will stay at that rating while on the page
+
+Expected:
+A user can rate the horizontal image container by using the star rating component
+
+Result:
+Everything works as it should
+
+**Ensure the popular profiles display**
+
+1. Go to profile page
+
+Expected:
+The popular profile component will display on the right side of the screen
+
+Result:
+Everything works as it should
 
 ## Unit Testing
 ## Lighthouse
