@@ -17,6 +17,7 @@ import Post from '../posts/Post';
 import { fetchMoreData } from '../../utils/utils';
 import ProfileImageSlider from './ProfileImageSlider';
 import { motion } from 'framer-motion/dist/framer-motion';
+import Rating from '../../components/Rating';
 
 function ProfilePage() {
     const [hasLoaded, setHasLoaded] = useState(false);
@@ -114,6 +115,10 @@ function ProfilePage() {
             <hr />
             <span className='text-center'><h5>Chatterbox Top Photos</h5></span>
             <ProfileImageSlider />
+            <span className='text-center'><p>Rate our selection</p></span>
+            <div className='text-center'>
+                <Rating />
+            </div>
             <hr />
             {profilePosts.results.length ? (
                 <InfiniteScroll
