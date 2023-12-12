@@ -71,6 +71,10 @@ This Epic covered the API endpoint creation and database connection relating to 
 **Contact**
 * As a user, I would like to be able to contact the site owner in case I have any issues or queries.
 
+**Rating**
+
+As a logged in user, I can rate the photo selection in the horizontal scroll container on the profile page.
+
 <hr>
 
 ### API Endpoints
@@ -166,6 +170,7 @@ When a user is logged in, the following navigation items are displayed:
 * Liked
 * Sign Out
 * Profile
+[!Navbar](docs/nav_logged_in.png)
 
 Logged out users:
 
@@ -173,6 +178,7 @@ When a user is logged out, the following navigation items are displayed:
 * Chatterbox logo
 * Login
 * Register
+[!Navbar](docs/nav_logged_out.png)
 
 **Home**
 
@@ -363,8 +369,64 @@ A permissions class was added called IsOwnerOrReadOnly to ensure only users who 
 Installed dependencies:
 * Cloudinary
 
-## Testing
+## User Stories Testing
+## Auth
+
+**Ensure a user can register**
+
+  1. Navigate to Chatterbox
+  2. Click Register
+  3. Fill the required inputs
+  4. Click register
+
+Expected:
+A user will be redirected to the login page
+
+Result:
+The new user is brought to the login page
+<hr>
+
+**Test if a user can login**
+
+1. Navigate to Chatterbox
+2. Click Login
+3. Fill the required inputs
+4. Click login
+
+Expeceted:
+A user will be redirected to the home page
+
+Result:
+The user will be redirected to the home page
+<hr>
+
+**
+
+## Unit Testing
+## Lighthouse
+
+Lighthouse testing on the app showed accessibility, best practices and seo to be performing well but performance was poor.
+![lighthouse](doc/pp5_lighthouse.png)
 <br>
+
+## Responsiveness
+
+All pages were tested to ensure they fit on every screen size, so any device from 285px and upwards.
+The steps taken were:
+
+1. Navigate to Chatterbox
+2. Right click and inspect to open the developer tools
+3. Test each page of the app on the devices from the drop down list
+
+Expected:
+The app will responsively adapt to the screen size with no horizontal scroll presenting itself or no overflowing images
+
+Result:
+The app behaved as expected
+
+## Validators
+
+
 
 ## Deployment
 ## Version Control
