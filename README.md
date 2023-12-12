@@ -71,6 +71,10 @@ This Epic covered the API endpoint creation and database connection relating to 
 **Contact**
 * As a user, I would like to be able to contact the site owner in case I have any issues or queries.
 
+**Rating**
+
+As a logged in user, I can rate the photo selection in the horizontal scroll container on the profile page.
+
 <hr>
 
 ### API Endpoints
@@ -364,6 +368,11 @@ Installed dependencies:
 * Cloudinary
 
 ## Testing
+
+## Lighthouse
+
+Lighthouse testing on the app showed accessibility, best practices and seo to be performing well but performance was poor.
+![lighthouse]()
 <br>
 
 ## Deployment
