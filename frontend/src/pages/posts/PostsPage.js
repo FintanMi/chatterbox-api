@@ -50,22 +50,25 @@ function PostsPage({ message, filter = "" }) {
                 exit={{ x: window.innerWidth, transition: { duration: 0.75, ease: [0.4, 1, 0.5, 1] } }}
             >
                 <Container fluid>
-                    <Row className="h-100">
-                        <Col className='py-2 p-0 p-lg-2' lg={9} md={9} sm={9}>
+                    <Row noGutters className="h-100">
+                        <Col className='py-2 p-0 p-lg-2' lg={8} md={12} sm={12}>
                             <PopularProfiles mobile />
-                            <i className={`fas fa-search ${styles.SearchIcon}`} />
-                            <Form
-                                className={styles.SearchBar}
-                                onSubmit={(event) => event.preventDefault()}
-                            >
-                                <Form.Control
-                                    value={query}
-                                    onChange={(event) => setQuery(event.target.value)}
-                                    type="text"
-                                    className="mr-sm-2"
-                                    placeholder="Search"
-                                />
-                            </Form>
+                            <div className={styles.SearchContainer}>
+                                <i className={`fas fa-search ${styles.SearchIcon}`} />
+                                <Form
+                                    className={styles.SearchBar}
+                                    onSubmit={(event) => event.preventDefault()}
+                                >
+                                    <Form.Control
+                                        value={query}
+                                        onChange={(event) => setQuery(event.target.value)}
+                                        type="text"
+                                        className="mr-sm-2"
+                                        placeholder="Search"
+                                    />
+                                </Form>
+                                <p>Found x posts</p>
+                            </div>
 
                             {hasLoaded ? (
                                 <>
@@ -91,7 +94,7 @@ function PostsPage({ message, filter = "" }) {
                                 </Container>
                             )}
                         </Col>
-                        <Col lg={3} className='d-none d-lg-block p-0 p-lg-2'>
+                        <Col lg={4} className='d-none d-lg-block p-0 p-lg-2'>
                             <PopularProfiles />
                         </Col>
                     </Row>

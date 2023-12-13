@@ -5,6 +5,12 @@
     row-gap: 1.5rem;
 }
 
+.SearchContainer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
 .SearchBar input {
     border-radius: 20px;
     color: #242a3d;

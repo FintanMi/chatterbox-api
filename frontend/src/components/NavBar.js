@@ -82,14 +82,14 @@ const NavBar = () => {
                 className={styles.Navlink}
                 style={{ textDecoration: 'none' }}
             >
-                <i className="fas fa-plus-square"></i> Create Post
+                <i className="fas fa-plus-square post"></i> Create Post
             </NavLink>
             <NavLink
                 to='/contact'
                 className={styles.NavLink}
                 style={{ textDecoration: 'none' }}
             >
-                <i className="fas fa-comment"></i> Contact Us
+                <i className="fas fa-comment contact"></i> Contact Us
             </NavLink>
         </>
     );
