@@ -77,7 +77,7 @@ const Post = (props) => {
     return (
         <>
             <Card className={styles.Post}>
-                <Link to={`/posts/${id}`}>
+                <Link to={`/posts/${id}`} className={styles.Image}>
                     <Card.Img src={image} alt={title} />
                 </Link>
                 <Card.Body>

@@ -54,7 +54,6 @@ function PostsPage({ message, filter = "" }) {
                         <Col className='py-2 p-0 p-lg-2' lg={8} md={12} sm={12}>
                             <PopularProfiles mobile />
                             <div className={styles.SearchContainer}>
-                                <i className={`fas fa-search ${styles.SearchIcon}`} />
                                 <Form
                                     className={styles.SearchBar}
                                     onSubmit={(event) => event.preventDefault()}
@@ -67,7 +66,6 @@ function PostsPage({ message, filter = "" }) {
                                         placeholder="Search"
                                     />
                                 </Form>
-                                <p>Found x posts</p>
                             </div>
 
                             {hasLoaded ? (
