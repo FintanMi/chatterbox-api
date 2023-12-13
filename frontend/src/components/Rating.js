@@ -1,6 +1,7 @@
 import emptyStar from '../assets/star.png';
 import star from '../assets/starfilled.png';
 import { useState } from 'react';
+import useLocalStorage from '../hooks/useLocalStorage';
 
 const styledConatiner = {
     display: 'flex',
@@ -30,7 +31,7 @@ const numText = {
 };
 
 export default function Rating({ maxRating = 5 }) {
-    const [rating, setRating] = useState(1);
+    const [rating, setRating] = useLocalStorage('rating', 1);
     const [hoverRating, setHoverRating] = useState(0);
 
     function handleRating(rating) {
