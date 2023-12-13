@@ -611,6 +611,41 @@ Result:
 Everything works as expected
 <hr>
 
+**Ensure a post can be unliked**
+
+1. Click the heart icon of a users post
+
+Expected:
+Logged in users can remove their like from any post
+
+Result:
+Everything works as expected
+<hr>
+
+**Test search bar functionality**
+
+1. Type a word into the search bar
+
+Expected:
+If the keyword matches one from the post, it will return that post
+
+Result:
+Works as expected
+<hr>
+
+**Test image size can't be more than 5mb**
+
+1. Click create post
+2. Try to upload a photo greater than 5mb
+3. Click save
+
+Expected:
+An error message will appear saying the size is too large and will not upload the photo
+
+Results:
+Works as expected
+<hr>
+
 ## Unit Testing
 ## Lighthouse
 
