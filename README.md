@@ -139,7 +139,7 @@ User Story:
 
 Implementation:
 
-A register form appears when a new user clicks on the register button. A new user only has to fill the form in and they'll be signed up.
+A register form appears when a new user clicks on the register button. A new user only has to fill the form in and they'll be signed up. Chatterbox text will be animated along the x axis.
 
 ![Register](docs/register_1.png)
 ![Register](docs/register_1.1.png)
