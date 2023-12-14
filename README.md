@@ -220,6 +220,8 @@ Implementation:
 
 A post detail page has been added that is visible to all users, this will allow them to see the full post detail and comments.
 
+![PostDetail}(docs/post_detail.png)
+
 User Stories:
 
 `As a logged in user, I can like a post which shows I enjoyed that users post`
