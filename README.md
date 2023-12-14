@@ -161,6 +161,16 @@ Implementation:
 A navigation menu was implemented that collapses into a hamburger menu on smaller devices.
 This will ensure that no navigation items overlap and users can access and navigate the site from any size device.
 
+User Story:
+
+`As a site owner, I'd like to display an error message if a user tried to access a page they're not supposed to or one that just isn't there`
+
+Implementation:
+
+A page not found with animated and button will appear from the right side of the screen. The button will return the user to their previous page.
+
+![PageNotFound](docs/404.png)
+
 **Navigation Menu**
 
 User Stories:
