@@ -130,6 +130,7 @@ User Story:
 Implementation:
 
 A site favicon was implemented with the sites logo. This will allow users to easily identify Chatterbox when they have multiple tabs open.
+
 ![Favicon](docs/favicon_pp5.png)
 
 User Story:
@@ -171,7 +172,7 @@ When a user is logged in, the following navigation items are displayed:
 * Liked
 * Sign Out
 * Profile
-[!Navbar](docs/nav_logged_in.png)
+  ![Navbar](docs/nav_logged_in.png)
 
 Logged out users:
 
@@ -179,7 +180,7 @@ When a user is logged out, the following navigation items are displayed:
 * Chatterbox logo
 * Login
 * Register
-[!Navbar](docs/nav_logged_out.png)
+  ![Navbar](docs/nav_logged_out.png)
 
 **Home**
 
