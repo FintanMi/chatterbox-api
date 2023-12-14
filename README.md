@@ -245,6 +245,7 @@ User Story:
 Implementation:
 
 A create post button has been implemented in the navbar in order for logged in users to create a post when they want to share something.
+![CreatePost](docs/create_post.png)
 
 User Story:
 
