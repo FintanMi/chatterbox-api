@@ -9,8 +9,8 @@ The live link can be found here: [Live Site - Chatterbox](https://chatterboxapi-
 Chatterbox is a site for everyone to post their favourite photos and maybe find new people to follow based on the content they are providing.
 
 ### Agile Planning
-This project was developed utilising agile principles where features were added in small, incremental sprints over numerous weeks.
-
+This project was developed utilising agile principles where features were added in small, incremental sprints over numerous weeks. The Kanban board was created using github projects and it shows all the stories implemented during this project.
+![Kanban](docs/project_stories.png)
 <hr>
 
 ## Epics
