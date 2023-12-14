@@ -135,6 +135,17 @@ A site favicon was implemented with the sites logo. This will allow users to eas
 
 User Story:
 
+`As a user, I'd like to be able to register to Chatterbox`
+
+Implementation:
+
+A register form appears when a new user clicks on the register button. A new user only has to fill the form in and they'll be signed up.
+
+![Register](docs/register_1.png)
+![Register](docs/register_1.1.png)
+
+User Story:
+
 `As a logged out user I can see login and register options so that I can login/register`
 
 Implementation:
