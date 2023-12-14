@@ -9,8 +9,8 @@ The live link can be found here: [Live Site - Chatterbox](https://chatterboxapi-
 Chatterbox is a site for everyone to post their favourite photos and maybe find new people to follow based on the content they are providing.
 
 ### Agile Planning
-This project was developed utilising agile principles where features were added in small, incremental sprints over numerous weeks.
-
+This project was developed utilising agile principles where features were added in small, incremental sprints over numerous weeks. The Kanban board was created using github projects and it shows all the stories implemented during this project.
+![Kanban](docs/project_stories.png)
 <hr>
 
 ## Epics
@@ -131,6 +131,8 @@ Implementation:
 
 A site favicon was implemented with the sites logo. This will allow users to easily identify Chatterbox when they have multiple tabs open.
 
+![Favicon](docs/favicon_pp5.png)
+
 User Story:
 
 `As a logged out user I can see login and register options so that I can login/register`
@@ -170,7 +172,7 @@ When a user is logged in, the following navigation items are displayed:
 * Liked
 * Sign Out
 * Profile
-[!Navbar](docs/nav_logged_in.png)
+  ![Navbar](docs/nav_logged_in.png)
 
 Logged out users:
 
@@ -178,7 +180,7 @@ When a user is logged out, the following navigation items are displayed:
 * Chatterbox logo
 * Login
 * Register
-[!Navbar](docs/nav_logged_out.png)
+  ![Navbar](docs/nav_logged_out.png)
 
 **Home**
 
@@ -218,6 +220,8 @@ Implementation:
 
 A post detail page has been added that is visible to all users, this will allow them to see the full post detail and comments.
 
+![PostDetail](docs/post_detail.png)
+
 User Stories:
 
 `As a logged in user, I can like a post which shows I enjoyed that users post`
@@ -241,6 +245,7 @@ User Story:
 Implementation:
 
 A create post button has been implemented in the navbar in order for logged in users to create a post when they want to share something.
+![CreatePost](docs/create_post.png)
 
 User Story:
 
@@ -265,6 +270,7 @@ User Story:
 Implementation:
 
 A search bar has been added that will allow users to search for keywords so that they can search for content that interests them.
+![Search](docs/drift.png)
 
 **Comments**
 
@@ -277,6 +283,7 @@ A comment or updated time will be displayed in either minutes or days.
 The username and Avatar of the user that created the comment will be displayed on each comment.
 
 Comments are restricted to one hundred and fifty characters
+![CommentSection](docs/comment.png)
 
 **Profiles**
 
@@ -289,6 +296,7 @@ Implementation:
 Profile pages have been implemented and can be viewed by clicking on a users Avatar that is displayed on a post.
 
 To view a users own profile, click on their own icon from the navigation menu.
+![Profile](docs/profile_page.png)
 
 User Stories:
 
