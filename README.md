@@ -270,6 +270,7 @@ User Story:
 Implementation:
 
 A search bar has been added that will allow users to search for keywords so that they can search for content that interests them.
+![Search](docs/drift.png)
 
 **Comments**
 
