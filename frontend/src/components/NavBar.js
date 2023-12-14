@@ -55,7 +55,7 @@ const NavBar = () => {
             className={styles.Navlink}
             style={{ textDecoration: 'none' }}
         >
-            <Avatar src={currentUser?.profile_image} text='Profile' height={40} />
+            <Avatar src={currentUser?.profile_image} text={currentUser?.username} height={40} />
         </NavLink>
     </>;
     const loggedOutIcons = <>
