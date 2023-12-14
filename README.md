@@ -296,7 +296,7 @@ Implementation:
 Profile pages have been implemented and can be viewed by clicking on a users Avatar that is displayed on a post.
 
 To view a users own profile, click on their own icon from the navigation menu.
-![Profile](docs/profile_page.png)
+![Profile](docs/profile_page_update.png)
 
 User Stories:
 
