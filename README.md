@@ -368,6 +368,25 @@ Implementation:
 
 A component showing the most followed users is shown and the user profiles are able to be viewed by clicking on these. On a desktop, the most followed users has five users. On a mobile device this is restricted to four so that it does not take up too much room as scrolling may become an issue. A follow button will also be displayed.
 
+## Skeleton Plane
+
+### Wireframes
+
+## Surface Plane
+
+### Design
+
+**Colour Scheme**
+
+The background colour of the navigation and components were given a dark blue colour (#001940) with the app background having a lighter blue (#334766) and a colour of (#e6e6ea) for the text. These colours were found on Tint and Shade Generator.
+<hr>
+
+The main font used is "Quicksand", if that was to fail the back up is "Ubuntu" and then "sans-serif".
+<hr>
+
+The images and icons used were from unsplash, pexel, icons8, and font awesome.
+<hr>
+
 ## Database Design
 ## Security
 A permissions class was added called IsOwnerOrReadOnly to ensure only users who create the content are able to edit or delete it.
@@ -376,6 +395,8 @@ A permissions class was added called IsOwnerOrReadOnly to ensure only users who 
 
 * Django - Main framework used for application creation
 * Django REST Framework - Used for creating the API
+* React - Main framework used for creating the user interface
+* Node - Package manager used to install dependencies
 * Heroku - Used for hosting the application
 * Git - Used for version control
 * Github - Repository for storing code base and docs
@@ -736,6 +757,12 @@ The site was deployed to Heroku. The steps to deploy are as follows:
 * Scroll down to Manual deploy and choose the main branch
 * Click deploy
 <br>
+
+## Credits
+Animation effects were those found on YouTube channels by Tom is Loading, PedroTech, Net Ninja, Sam Selikoff.
+
+## Acknowledgements
+Thanks to the tutors for their help with deployment issues when combining the frontend section into the backend project.
 
 
   
