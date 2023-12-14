@@ -220,7 +220,7 @@ Implementation:
 
 A post detail page has been added that is visible to all users, this will allow them to see the full post detail and comments.
 
-![PostDetail}(docs/post_detail.png)
+![PostDetail](docs/post_detail.png)
 
 User Stories:
 
@@ -281,6 +281,7 @@ A comment or updated time will be displayed in either minutes or days.
 The username and Avatar of the user that created the comment will be displayed on each comment.
 
 Comments are restricted to one hundred and fifty characters
+![CommentSection](docs/comment.png)
 
 **Profiles**
 
@@ -293,6 +294,7 @@ Implementation:
 Profile pages have been implemented and can be viewed by clicking on a users Avatar that is displayed on a post.
 
 To view a users own profile, click on their own icon from the navigation menu.
+![Profile](docs/profile_page.png)
 
 User Stories:
 
