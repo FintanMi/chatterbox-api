@@ -130,6 +130,7 @@ User Story:
 Implementation:
 
 A site favicon was implemented with the sites logo. This will allow users to easily identify Chatterbox when they have multiple tabs open.
+![Favicon](docs/favicon_pp5.png)
 
 User Story:
 
