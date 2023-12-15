@@ -135,6 +135,17 @@ A site favicon was implemented with the sites logo. This will allow users to eas
 
 User Story:
 
+`As a user, I'd like to be able to register to Chatterbox`
+
+Implementation:
+
+A register form appears when a new user clicks on the register button. A new user only has to fill the form in and they'll be signed up. Chatterbox text will be animated along the x axis.
+
+![Register](docs/register_1.png)
+![Register](docs/register_1.1.png)
+
+User Story:
+
 `As a logged out user I can see login and register options so that I can login/register`
 
 Implementation:
@@ -149,6 +160,16 @@ Implementation:
 
 A navigation menu was implemented that collapses into a hamburger menu on smaller devices.
 This will ensure that no navigation items overlap and users can access and navigate the site from any size device.
+
+User Story:
+
+`As a site owner, I'd like to display an error message if a user tried to access a page they're not supposed to or one that just isn't there`
+
+Implementation:
+
+A page not found with animated and button will appear from the right side of the screen. The button will return the user to their previous page.
+
+![PageNotFound](docs/404.png)
 
 **Navigation Menu**
 
@@ -296,7 +317,7 @@ Implementation:
 Profile pages have been implemented and can be viewed by clicking on a users Avatar that is displayed on a post.
 
 To view a users own profile, click on their own icon from the navigation menu.
-![Profile](docs/profile_page.png)
+![Profile](docs/profile_page_update.png)
 
 User Stories:
 
@@ -347,6 +368,25 @@ Implementation:
 
 A component showing the most followed users is shown and the user profiles are able to be viewed by clicking on these. On a desktop, the most followed users has five users. On a mobile device this is restricted to four so that it does not take up too much room as scrolling may become an issue. A follow button will also be displayed.
 
+## Skeleton Plane
+
+### Wireframes
+
+## Surface Plane
+
+### Design
+
+**Colour Scheme**
+
+The background colour of the navigation and components were given a dark blue colour (#001940) with the app background having a lighter blue (#334766) and a colour of (#e6e6ea) for the text. These colours were found on Tint and Shade Generator.
+<hr>
+
+The main font used is "Quicksand", if that was to fail the back up is "Ubuntu" and then "sans-serif".
+<hr>
+
+The images and icons used were from unsplash, pexel, icons8, and font awesome.
+<hr>
+
 ## Database Design
 ## Security
 A permissions class was added called IsOwnerOrReadOnly to ensure only users who create the content are able to edit or delete it.
@@ -355,6 +395,8 @@ A permissions class was added called IsOwnerOrReadOnly to ensure only users who 
 
 * Django - Main framework used for application creation
 * Django REST Framework - Used for creating the API
+* React - Main framework used for creating the user interface
+* Node - Package manager used to install dependencies
 * Heroku - Used for hosting the application
 * Git - Used for version control
 * Github - Repository for storing code base and docs
@@ -715,6 +757,12 @@ The site was deployed to Heroku. The steps to deploy are as follows:
 * Scroll down to Manual deploy and choose the main branch
 * Click deploy
 <br>
+
+## Credits
+Animation effects were those found on YouTube channels by Tom is Loading, PedroTech, Net Ninja, Sam Selikoff.
+
+## Acknowledgements
+Thanks to the tutors for their help with deployment issues when combining the frontend section into the backend project.
 
 
   
