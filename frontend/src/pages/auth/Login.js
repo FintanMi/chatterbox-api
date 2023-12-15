@@ -80,7 +80,7 @@ function Login() {
                                 whileHover={{ scale: 1.05 }}
                                 transition={{ type: 'spring', stiffness: 700 }}
                                 onClick={() => setExpanded(!expanded)}>
-                                Login
+                                Click here
                             </motion.button>
                         </div>
                         <DynamicDiv>

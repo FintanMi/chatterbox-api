@@ -114,6 +114,7 @@ function ProfilePage() {
         <>
             <hr />
             <span className='text-center'><h5>Chatterbox Top Photos</h5></span>
+            <span className='text-center mt-5'><p>Swipe for more</p></span>
             <ProfileImageSlider />
             <span className='text-center'><p>Rate our selection</p></span>
             <div className='text-center'>

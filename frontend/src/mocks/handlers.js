@@ -2,9 +2,9 @@ import { rest } from 'msw';
 
 const baseURL = "/api";
 
-export const handlers = [
+const handlers = [
     rest.get(`${baseURL}dj-rest-auth/user/`, (req, res, ctx) => {
-        return res(ctx.json(
+        res(ctx.json(
             {
                 pk: 4,
                 username: "gael",
@@ -22,4 +22,4 @@ export const handlers = [
     })
 ];
 
-
+export default handlers;
