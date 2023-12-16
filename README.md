@@ -372,7 +372,7 @@ A component showing the most followed users is shown and the user profiles are a
 
 ### Wireframes
 Profile
-![Profile](docs/pp5_wf_profile.png)
+![Profile](docs/pp5_wf_rating.png)
 
 Home
 ![Home](docs/pp5_wf_home.png)
