@@ -374,6 +374,12 @@ A component showing the most followed users is shown and the user profiles are a
 Profile
 ![Profile](docs/pp5_wf_profile.png)
 
+Home
+![Home](docs/pp5_wf_home.png)
+
+Contact
+![Contact](docs/contact.png)
+
 ## Surface Plane
 
 ### Design
