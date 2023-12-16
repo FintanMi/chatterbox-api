@@ -371,6 +371,8 @@ A component showing the most followed users is shown and the user profiles are a
 ## Skeleton Plane
 
 ### Wireframes
+Profile
+![Profile](docs/pp5_wf_profile.png)
 
 ## Surface Plane
 
