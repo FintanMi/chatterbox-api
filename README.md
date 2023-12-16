@@ -378,7 +378,7 @@ Home
 ![Home](docs/pp5_wf_home.png)
 
 Contact
-![Contact](docs/contact.png)
+![Contact](docs/pp5_wf_contact.png)
 
 ## Surface Plane
 
