@@ -371,28 +371,36 @@ A component showing the most followed users is shown and the user profiles are a
 ## Skeleton Plane
 
 ### Wireframes
-Profile
+Profile:
+
 ![Profile](docs/pp5_wf_rating.png)
 
-Home
+Home:
+
 ![Home](docs/pp5_wf_home.png)
 
-Contact
+Contact:
+
 ![Contact](docs/pp5_wf_contact.png)
 
-Feed
+Feed:
+
 ![Feed](docs/pp5_wf_profile.png)
 
-Liked
+Liked:
+
 ![Liked](docs/pp5_wf_profile.png)
 
-Comments
+Comments:
+
 ![Comments](docs/pp5_wf_comments.png)
 
-Contact
+Contact:
+
 ![Create](docs/pp5_wf_create.png)
 
-Login
+Login:
+
 ![Login](docs/pp5_wf_login.png)
 
 ## Surface Plane
