@@ -386,6 +386,9 @@ Feed
 Liked
 ![Liked](docs/pp5_wf_profile.png)
 
+Comments
+![Comments](docs/pp5_wf_comments.png)
+
 ## Surface Plane
 
 ### Design
