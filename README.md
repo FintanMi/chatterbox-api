@@ -429,6 +429,10 @@ The main font used is "Quicksand", if that was to fail the back up is "Ubuntu" a
 The images and icons used were from unsplash, pexel, icons8, and font awesome.
 <hr>
 
+**Animation**
+
+Animations are used for page transitions, they're on every button throughout the app, and on the page not found. They were acheived using framer motion. 
+
 ## Database Design
 
 ![Database_Design](docs/er_diagram_final.JPG)
@@ -446,7 +450,9 @@ A permissions class was added called IsOwnerOrReadOnly to ensure only users who 
 * Git - Used for version control
 * Github - Repository for storing code base and docs
 <br>
+
 ## Python Packages
+
 * Django
 * dj-rest-auth
 * dj-database-url
@@ -755,7 +761,7 @@ Works as expected
 ## Lighthouse
 
 Lighthouse testing on the app showed accessibility, best practices and seo to be performing well but performance was poor.
-![lighthouse](doc/pp5_lighthouse.png)
+![lighthouse](docs/pp5_lighthouse.png)
 <br>
 
 ## Responsiveness
@@ -802,6 +808,19 @@ Navigate to the github repository you want to clone locally and proceed with the
 * Type git clone and paste the copied url into the IDE terminal
 
 The project is cloned and ready for local use.
+
+To run the backend, this must be run before the frontend, you have to type:
+
+  `python manage.py runserver`
+
+To run the frontend you need to change into the frontend, where you have to install dependencies using:
+
+  `npm install`
+  
+then to run the app, you type:
+
+  `npm start`
+
 <br>
 
 ## Heroku Deployment
