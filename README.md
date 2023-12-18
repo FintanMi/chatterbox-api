@@ -780,6 +780,19 @@ The following git commands were used throughout development to push code to the 
 
 ```git push``` - This command was used to push all committed code to the remote repository on github.
 <br>
+## Run Locally
+
+Navigate to the github repository you want to clone locally and proceed with the following steps:
+
+* Click on the code dropdown button
+* Click on HTTPS
+* Copy the repository link
+* Open your IDE of choice, git must be installed for the next step
+* Type git clone and paste the copied url into the IDE terminal
+
+The project is cloned and ready for local use.
+<br>
+
 ## Heroku Deployment
 The site was deployed to Heroku. The steps to deploy are as follows:
 
@@ -792,10 +805,12 @@ The site was deployed to Heroku. The steps to deploy are as follows:
 * Select hobby dev and continue
 * Go to the settings tab and then click reveal config vars
 * Add the following config vars:
-  *
-  *
-  *
-  *
+  *  SECRET_KEY
+  *  DATABASE_URL
+  *  ALLOWED_HOST
+  *  CLIENT_ORIGIN
+  *  CLIENT_ORIGIN_DEV
+
 * Click the deploy tab
 * Scroll down to Connect to GitHub and sign in / authorize when prompted
 * In the search box, find the repositoy you want to deploy and click connect
