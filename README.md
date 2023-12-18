@@ -446,7 +446,9 @@ A permissions class was added called IsOwnerOrReadOnly to ensure only users who 
 * Git - Used for version control
 * Github - Repository for storing code base and docs
 <br>
+
 ## Python Packages
+
 * Django
 * dj-rest-auth
 * dj-database-url
