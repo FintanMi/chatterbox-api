@@ -840,6 +840,7 @@ The site was deployed to Heroku. The steps to deploy are as follows:
   *  ALLOWED_HOST
   *  CLIENT_ORIGIN
   *  CLIENT_ORIGIN_DEV
+  *  CLOUDINARY_URL
 
 * Click the deploy tab
 * Scroll down to Connect to GitHub and sign in / authorize when prompted
