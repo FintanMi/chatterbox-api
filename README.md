@@ -758,7 +758,7 @@ Works as expected
 ## Lighthouse
 
 Lighthouse testing on the app showed accessibility, best practices and seo to be performing well but performance was poor.
-![lighthouse](doc/pp5_lighthouse.png)
+![lighthouse](docs/pp5_lighthouse.png)
 <br>
 
 ## Responsiveness
