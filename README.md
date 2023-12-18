@@ -420,7 +420,7 @@ The images and icons used were from unsplash, pexel, icons8, and font awesome.
 
 ## Database Design
 
-![Database design](docs/er_diagram_final.jpg)
+![Database_Design](docs/er_diagram_final.JPG)
 
 ## Security
 A permissions class was added called IsOwnerOrReadOnly to ensure only users who create the content are able to edit or delete it.
