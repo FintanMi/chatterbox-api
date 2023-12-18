@@ -453,6 +453,12 @@ A permissions class was added called IsOwnerOrReadOnly to ensure only users who 
 Installed dependencies:
 * Cloudinary
 
+## API Testing
+
+The tests below were done locally during the development phase.
+
+![Testing](docs/pp5tests.png)
+
 ## User Stories Testing
 <details>
 
