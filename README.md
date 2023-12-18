@@ -752,7 +752,6 @@ An error message will appear saying the size is too large and will not upload th
 Results:
 Works as expected
 <hr>
-</details>
 
 ## Unit Testing
 ## Lighthouse
@@ -775,6 +774,7 @@ The app will responsively adapt to the screen size with no horizontal scroll pre
 
 Result:
 The app behaved as expected
+</details>
 
 ## Validators
 
