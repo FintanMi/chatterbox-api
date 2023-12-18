@@ -804,6 +804,19 @@ Navigate to the github repository you want to clone locally and proceed with the
 * Type git clone and paste the copied url into the IDE terminal
 
 The project is cloned and ready for local use.
+
+To run the backend, this must be run before the frontend, you have to type:
+
+  `python manage.py runserver`
+
+To run the frontend, you have to install dependencies using:
+
+  `npm install`
+  
+then to run the app, you type:
+
+  `npm install`
+
 <br>
 
 ## Heroku Deployment
