@@ -120,6 +120,13 @@ Methods:
 
 <hr>
 
+## Combining Workspaces
+
+The following articles were provided by Code Institute to merge the react files into the Django API and deploy both applications:
+  
+  * [combine workspaces](https://code-institute-students.github.io/advfe-unified-workspace/combining-workspaces/01-adding-the-react-files)
+  * [deploy applications](https://code-institute-students.github.io/advfe-unified-workspace/deployment/00-deployment)
+
 ## Features
 **Setup**
 
@@ -371,6 +378,41 @@ A component showing the most followed users is shown and the user profiles are a
 ## Skeleton Plane
 
 ### Wireframes
+Profile:
+
+![Profile](docs/pp5_wf_rating.png)
+
+Home:
+
+![Home](docs/pp5_wf_home.png)
+
+Contact:
+
+![Contact](docs/pp5_wf_contact.png)
+
+Feed:
+
+![Feed](docs/pp5_wf_profile.png)
+
+Liked:
+
+![Liked](docs/pp5_wf_profile.png)
+
+Comments:
+
+![Comments](docs/pp5_wf_comments.png)
+
+Contact:
+
+![Create](docs/pp5_wf_create.png)
+
+Login:
+
+![Login](docs/pp5_wf_login.png)
+
+## Future Features
+
+To enhance the user experience, an instant messaging system will be implemented to allow users to privately communicate with each other. Another future feature will be to implement a reply system so users can comment on individual comments. Finally, the top six photos during the previous twenty hours (determined by the number of likes) would be displayed on the profile page instead of random photos.
 
 ## Surface Plane
 
@@ -388,6 +430,9 @@ The images and icons used were from unsplash, pexel, icons8, and font awesome.
 <hr>
 
 ## Database Design
+
+![Database_Design](docs/er_diagram_final.JPG)
+
 ## Security
 A permissions class was added called IsOwnerOrReadOnly to ensure only users who create the content are able to edit or delete it.
 
@@ -419,7 +464,17 @@ A permissions class was added called IsOwnerOrReadOnly to ensure only users who 
 Installed dependencies:
 * Cloudinary
 
+## API Testing
+
+The tests below were done locally during the development phase.
+
+![Testing](docs/pp5tests.png)
+
 ## User Stories Testing
+<details>
+
+<summary>All Manual Tests</summary>
+
 ## Auth
 
 **Ensure a user can register**
@@ -717,6 +772,7 @@ The app will responsively adapt to the screen size with no horizontal scroll pre
 
 Result:
 The app behaved as expected
+</details>
 
 ## Validators
 
@@ -735,6 +791,19 @@ The following git commands were used throughout development to push code to the 
 
 ```git push``` - This command was used to push all committed code to the remote repository on github.
 <br>
+## Run Locally
+
+Navigate to the github repository you want to clone locally and proceed with the following steps:
+
+* Click on the code dropdown button
+* Click on HTTPS
+* Copy the repository link
+* Open your IDE of choice, git must be installed for the next step
+* Type git clone and paste the copied url into the IDE terminal
+
+The project is cloned and ready for local use.
+<br>
+
 ## Heroku Deployment
 The site was deployed to Heroku. The steps to deploy are as follows:
 
@@ -747,10 +816,12 @@ The site was deployed to Heroku. The steps to deploy are as follows:
 * Select hobby dev and continue
 * Go to the settings tab and then click reveal config vars
 * Add the following config vars:
-  *
-  *
-  *
-  *
+  *  SECRET_KEY
+  *  DATABASE_URL
+  *  ALLOWED_HOST
+  *  CLIENT_ORIGIN
+  *  CLIENT_ORIGIN_DEV
+
 * Click the deploy tab
 * Scroll down to Connect to GitHub and sign in / authorize when prompted
 * In the search box, find the repositoy you want to deploy and click connect
