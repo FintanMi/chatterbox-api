@@ -64,7 +64,7 @@ i:hover {
     }
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 540px) {
     .FixedContainer {
         position: unset;
         padding: 5px;
@@ -86,7 +86,7 @@ i:hover {
     margin-top: 1rem;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 912px) {
     .Content {
         position: unset;
     }
