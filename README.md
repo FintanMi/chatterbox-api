@@ -410,6 +410,10 @@ Login:
 
 ![Login](docs/pp5_wf_login.png)
 
+## Future Features
+
+To enhance the user experience, an instant messaging system will be implemented to allow users to privately communicate with each other. Another future feature will be to implement a reply system so users can comment on individual comments. Finally, the top six photos during the previous twenty hours (determined by the number of likes) would be displayed on the profile page instead of random photos.
+
 ## Surface Plane
 
 ### Design
