@@ -120,6 +120,13 @@ Methods:
 
 <hr>
 
+## Combining Workspaces
+
+The following articles were provided by Code Institute to merge the react files into the Django API and deploy both applications:
+  
+  * [combine workspaces](https://code-institute-students.github.io/advfe-unified-workspace/combining-workspaces/01-adding-the-react-files)
+  * [deploy applications](https://code-institute-students.github.io/advfe-unified-workspace/deployment/00-deployment)
+
 ## Features
 **Setup**
 
