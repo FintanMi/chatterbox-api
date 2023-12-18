@@ -419,6 +419,9 @@ The images and icons used were from unsplash, pexel, icons8, and font awesome.
 <hr>
 
 ## Database Design
+
+![Database design](docs/er_diagram_final.jpg)
+
 ## Security
 A permissions class was added called IsOwnerOrReadOnly to ensure only users who create the content are able to edit or delete it.
 
