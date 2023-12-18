@@ -452,6 +452,9 @@ Installed dependencies:
 
 ## User Stories Testing
 <details>
+
+<summary>All Manual Tests</summary>
+
 ## Auth
 
 **Ensure a user can register**
