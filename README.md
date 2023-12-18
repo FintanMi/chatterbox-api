@@ -429,6 +429,10 @@ The main font used is "Quicksand", if that was to fail the back up is "Ubuntu" a
 The images and icons used were from unsplash, pexel, icons8, and font awesome.
 <hr>
 
+**Animation**
+
+Animations are used for page transitions, they're on every button throughout the app, and on the page not found. They were acheived using framer motion. 
+
 ## Database Design
 
 ![Database_Design](docs/er_diagram_final.JPG)
