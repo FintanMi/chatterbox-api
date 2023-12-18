@@ -451,6 +451,7 @@ Installed dependencies:
 * Cloudinary
 
 ## User Stories Testing
+<details>
 ## Auth
 
 **Ensure a user can register**
@@ -748,6 +749,7 @@ The app will responsively adapt to the screen size with no horizontal scroll pre
 
 Result:
 The app behaved as expected
+</details>
 
 ## Validators
 
