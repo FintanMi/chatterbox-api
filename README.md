@@ -813,13 +813,13 @@ To run the backend, this must be run before the frontend, you have to type:
 
   `python manage.py runserver`
 
-To run the frontend, you have to install dependencies using:
+To run the frontend you need to change into the frontend, where you have to install dependencies using:
 
   `npm install`
   
 then to run the app, you type:
 
-  `npm install`
+  `npm start`
 
 <br>
 
